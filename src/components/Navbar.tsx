@@ -14,7 +14,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-purple-900/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-purple-900/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link
@@ -56,7 +56,7 @@ export default function Navbar() {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-black/90 backdrop-blur-md">
+        <div className="md:hidden bg-black/10 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map(item => (
               <Link
