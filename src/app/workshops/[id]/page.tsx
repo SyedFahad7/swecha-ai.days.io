@@ -139,7 +139,7 @@ export default async function WorkshopDetailPage(props: { params: paramsType }) 
 
               {/* Learning Outcomes */}
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-yellow-300">What You&39;ll Learn</h2>
+                <h2 className="text-2xl font-bold text-yellow-300">What You&#39;ll Learn</h2>
                 <div className="grid gap-4">
                   {workshop.learningOutcomes.map((outcome, index) => (
                     <div
