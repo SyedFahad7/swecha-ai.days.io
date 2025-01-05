@@ -107,12 +107,12 @@ export default function AgendaPage() {
                             <h3 className="text-xl font-bold text-white group-hover:text-yellow-200 transition-colors mb-2">
                               {event.title}
                             </h3>
-                            <p className="text-gray-400">{event.description}</p>
+                            <p className="text-gray-400 mb-4 md:mb-0">{event.description}</p>
 
                             {/* Session Type Badge */}
-                            <div className="absolute top-6 right-6">
+                            <div className="md:absolute md:top-6 md:right-6 mb-2 md:mb-0">
                               <div
-                                className={`px-3 py-1 rounded-full text-xs uppercase tracking-wider border ${
+                                className={`inline-block px-3 py-1 rounded-full text-xs uppercase tracking-wider border ${
                                   event.type === 'keynote'
                                     ? 'border-purple-500/30 text-purple-300'
                                     : event.type === 'panel'
@@ -133,7 +133,7 @@ export default function AgendaPage() {
                             </div>
 
                             {/* View Details Indicator */}
-                            <div className="absolute bottom-6 right-6">
+                            <div className="md:absolute md:bottom-6 md:right-6">
                               <span className="text-sm text-yellow-300/60 group-hover:text-yellow-300 transition-colors">
                                 View Details →
                               </span>
