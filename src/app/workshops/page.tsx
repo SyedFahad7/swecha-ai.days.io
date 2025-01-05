@@ -25,7 +25,7 @@ export default function WorkshopsPage() {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 border border-yellow-500/50" />
 
           <h1 className="text-center text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
-            AI Temperament Workshops
+            Workshops
           </h1>
           <p className="text-center text-xl text-yellow-100/60 max-w-3xl mx-auto">
             Hands-on sessions to shape the future of AI personality and behavior
