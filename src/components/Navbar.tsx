@@ -39,6 +39,12 @@ export default function Navbar() {
             >
               Workshops
             </Link>
+            <Link 
+              href="/sponsors" 
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Sponsors
+            </Link>
             <button 
               className="px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-sm font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-cyan-500/25"
             >
