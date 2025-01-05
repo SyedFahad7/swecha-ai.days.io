@@ -3,7 +3,7 @@ export const speakers = [
     name: 'Soumit Chintala',
     role: 'AI Fixer, Meta',
     image: '/speakers/soumith.jpg',
-    topic: 'The Future of Large Language Models',
+    topic: '',
     bio: 'AI expert and leader with expertise in advanced algorithms and innovative engineering solutions.',
     social: {
       twitter: '',
@@ -11,15 +11,136 @@ export const speakers = [
     },
   },
   {
-    name: 'Sinivasa Raju Chintalapati',
+    name: 'Srinivasa Raju Chintalapati',
     role: 'Chairman, iLabs Capital',
     image: '/speakers/speaker2.jpg',
-    topic: 'Ethical AI Development',
-    bio: 'Information Technology Professional, Entrepreneur, Investor & Philanthropy in Education.',
+    topic: '',
+    bio: '',
     social: {
       twitter: '',
       linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
     },
   },
-  // Add more speakers here
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  {
+    name: 'Srinivasa Raju Chintalapati',
+    role: 'Chairman, iLabs Capital',
+    image: '/speakers/speaker2.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/srinivasacraju-156887135/',
+    },
+  },
+  
 ];
