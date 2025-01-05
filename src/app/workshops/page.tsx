@@ -114,7 +114,7 @@ export default function WorkshopsPage() {
                   </div>
 
                   {/* View Details */}
-                  <div className="absolute bottom-6 right-6">
+                  <div className="md:absolute md:bottom-6 md:right-6 mt-4 md:mt-0">
                     <span className="text-sm text-yellow-300/60 group-hover:text-yellow-300 transition-colors">
                       View Details →
                     </span>
