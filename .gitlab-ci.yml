@@ -1,0 +1,64 @@
+image: node:23.1
+
+variables:
+  PNPM_HOME: "/root/.local/share/pnpm"
+  PATH: "$PNPM_HOME:$PATH"
+  VERCEL_ORG_ID: ${VERCEL_ORG_ID}
+  VERCEL_PROJECT_ID: ${VERCEL_PROJECT_ID}
+
+stages:
+  - setup
+  - deploy
+
+.base_setup: &base_setup
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@latest --activate
+    - pnpm config set store-dir .pnpm-store
+
+.base_deploy:
+  before_script:
+    - npm install -g vercel
+    - pnpm install --frozen-lockfile
+
+deploy_preview:
+  extends: .base_setup
+  stage: deploy
+  only:
+    - dev
+  script:
+    - pnpm install --frozen-lockfile
+    - npm install --global vercel
+    - vercel pull --yes --environment=preview --token=$VERCEL_TOKEN
+    - vercel build --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --token=$VERCEL_TOKEN
+  environment:
+    name: development
+    url: $VERCEL_PREVIEW_URL
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - .pnpm-store
+
+deploy_production:
+  extends: .base_setup
+  stage: deploy
+  only:
+    - main
+  script:
+    - pnpm install --frozen-lockfile
+    - npm install --global vercel
+    - vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+    - vercel build --prod --token=$VERCEL_TOKEN
+    - vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+  environment:
+    name: production
+    url: $VERCEL_PRODUCTION_URL
+  cache:
+    key:
+      files:
+        - pnpm-lock.yaml
+    paths:
+      - .pnpm-store
