@@ -102,6 +102,8 @@ export default function WorkshopsPage() {
                       <Image
                         src={workshop.instructor.image}
                         alt={workshop.instructor.name}
+                        width={40}
+                        height={40}
                         className="object-cover w-full h-full"
                       />
                     </div>

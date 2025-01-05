@@ -84,7 +84,8 @@ export default async function WorkshopDetailPage(props: { params: paramsType }) 
                       <Image
                         src={workshop.instructor.image}
                         alt={workshop.instructor.name}
-                        fill
+                        width={96}
+                        height={96}
                         className="object-cover"
                       />
                     </div>
