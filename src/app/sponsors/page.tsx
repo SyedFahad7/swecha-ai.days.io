@@ -27,7 +27,7 @@ export default function SponsorsPage() {
         <div className="relative max-w-7xl mx-auto mb-24">
           <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent via-yellow-500/50 to-purple-500/50" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 border border-yellow-500/50" />
-          
+
           <h1 className="text-center text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
             Our Sponsors
           </h1>
@@ -42,7 +42,7 @@ export default function SponsorsPage() {
             Platinum Supporters
           </h2>
           <div className="grid grid-cols-1 gap-8 mt-12">
-            {platinumSponsors.map((sponsor) => (
+            {platinumSponsors.map(sponsor => (
               <Link
                 key={sponsor.id}
                 href={sponsor.website}
@@ -65,9 +65,7 @@ export default function SponsorsPage() {
                       <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
                         {sponsor.name}
                       </h3>
-                      <p className="text-gray-400 text-lg mb-4">
-                        {sponsor.description}
-                      </p>
+                      <p className="text-gray-400 text-lg mb-4">{sponsor.description}</p>
                       <span className="text-yellow-300/60 group-hover:text-yellow-300 transition-colors">
                         Visit Website →
                       </span>
@@ -85,7 +83,7 @@ export default function SponsorsPage() {
             Silver Supporters
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-            {silverSponsors.map((sponsor) => (
+            {silverSponsors.map(sponsor => (
               <Link
                 key={sponsor.id}
                 href={sponsor.website}
@@ -106,9 +104,7 @@ export default function SponsorsPage() {
                     <h3 className="text-2xl font-bold text-center mb-4 text-gray-200">
                       {sponsor.name}
                     </h3>
-                    <p className="text-gray-400 text-center mb-4">
-                      {sponsor.description}
-                    </p>
+                    <p className="text-gray-400 text-center mb-4">{sponsor.description}</p>
                     <div className="text-center">
                       <span className="text-gray-400/60 group-hover:text-gray-300 transition-colors">
                         Visit Website →
@@ -127,7 +123,7 @@ export default function SponsorsPage() {
             Associate Supporters
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            {associateSponsors.map((sponsor) => (
+            {associateSponsors.map(sponsor => (
               <Link
                 key={sponsor.id}
                 href={sponsor.website}
@@ -148,9 +144,7 @@ export default function SponsorsPage() {
                     <h3 className="text-xl font-bold text-center mb-3 text-purple-200">
                       {sponsor.name}
                     </h3>
-                    <p className="text-gray-400 text-center text-sm mb-4">
-                      {sponsor.description}
-                    </p>
+                    <p className="text-gray-400 text-center text-sm mb-4">{sponsor.description}</p>
                     <div className="text-center">
                       <span className="text-purple-400/60 group-hover:text-purple-300 transition-colors text-sm">
                         Visit Website →

@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -15,7 +13,7 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 text-center px-4">
           <p className="text-lg md:text-xl mb-4 text-purple-300 font-medium tracking-wider">
-            India's Largest AI Conference
+            India&#39;s Largest AI Conference
           </p>
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 animate-pulse">
             AI Days

@@ -1,20 +1,17 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import Navbar from '@/components/Navbar'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import Navbar from '@/components/Navbar';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'AI Days 2025 - India\'s Largest AI Conference',
-  description: 'Join us for AI Days 2025, India\'s premier artificial intelligence conference featuring 60+ speakers and 2000+ delegates.',
-}
+  title: "AI Days 2025 - India's Largest AI Conference",
+  description:
+    "Join us for AI Days 2025, India's premier artificial intelligence conference featuring 60+ speakers and 2000+ delegates.",
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -22,5 +19,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  )
+  );
 }

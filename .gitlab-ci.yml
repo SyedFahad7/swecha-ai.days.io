@@ -1,8 +1,8 @@
 image: node:23.1
 
 variables:
-  PNPM_HOME: "/root/.local/share/pnpm"
-  PATH: "$PNPM_HOME:$PATH"
+  PNPM_HOME: '/root/.local/share/pnpm'
+  PATH: '$PNPM_HOME:$PATH'
   VERCEL_ORG_ID: ${VERCEL_ORG_ID}
   VERCEL_PROJECT_ID: ${VERCEL_PROJECT_ID}
 

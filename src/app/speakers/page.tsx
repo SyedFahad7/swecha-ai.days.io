@@ -48,7 +48,7 @@ export default function SpeakersPage() {
         <div className="relative max-w-7xl mx-auto mb-24">
           <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent via-yellow-500/50 to-purple-500/50" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 border border-yellow-500/50" />
-          
+
           <h1 className="text-center text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
             Our Speakers
           </h1>
@@ -68,10 +68,7 @@ export default function SpeakersPage() {
           </div>
 
           {speakers.map((speaker, index) => (
-            <div
-              key={index}
-              className="group relative"
-            >
+            <div key={index} className="group relative">
               {/* Card Background with grain texture */}
               <div className="absolute inset-0 bg-[#0A0A0A] border border-yellow-900/30 rounded-lg overflow-hidden">
                 <div className="absolute inset-0 opacity-50 mix-blend-overlay" />

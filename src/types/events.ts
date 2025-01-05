@@ -33,7 +33,15 @@ export type EventBase = {
   id: string;
   time: string;
   title: string;
-  type: 'keynote' | 'panel' | 'workshop' | 'talk' | 'entertainment' | 'networking' | 'break' | 'opening';
+  type:
+    | 'keynote'
+    | 'panel'
+    | 'workshop'
+    | 'talk'
+    | 'entertainment'
+    | 'networking'
+    | 'break'
+    | 'opening';
   track?: string;
   description: string;
   location: string;
@@ -87,13 +95,13 @@ export type OpeningEvent = EventBase & {
   agenda: string[];
 };
 
-export type Event = 
-  | KeynoteEvent 
-  | PanelEvent 
-  | WorkshopEvent 
-  | TalkEvent 
-  | NetworkingEvent 
-  | EntertainmentEvent 
+export type Event =
+  | KeynoteEvent
+  | PanelEvent
+  | WorkshopEvent
+  | TalkEvent
+  | NetworkingEvent
+  | EntertainmentEvent
   | BreakEvent
   | OpeningEvent;
 

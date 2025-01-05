@@ -1,4 +1,4 @@
-import { AgendaDay, Event } from '../types/events';
+import { AgendaDay } from '../types/events';
 
 export const agendaData: AgendaDay[] = [
   {
@@ -11,7 +11,7 @@ export const agendaData: AgendaDay[] = [
         type: 'break',
         description: 'Pick up your conference materials and enjoy breakfast',
         location: 'Main Hall',
-        refreshments: ['Continental Breakfast', 'Coffee & Tea', 'Fresh Juices']
+        refreshments: ['Continental Breakfast', 'Coffee & Tea', 'Fresh Juices'],
       },
       {
         id: 'opening-ceremony',
@@ -30,23 +30,23 @@ export const agendaData: AgendaDay[] = [
             image: '/speakers/sarah-chen.jpg',
             socialLinks: [
               { platform: 'twitter', url: 'https://twitter.com/sarahchen' },
-              { platform: 'linkedin', url: 'https://linkedin.com/in/sarahchen' }
-            ]
-          }
+              { platform: 'linkedin', url: 'https://linkedin.com/in/sarahchen' },
+            ],
+          },
         ],
         agenda: [
           'Welcome Address',
           'Conference Overview',
           'Vision for AI in India',
-          'Cultural Performance'
-        ]
+          'Cultural Performance',
+        ],
       },
       {
         id: 'keynote-future-ai',
         time: '10:00 - 11:00',
         title: 'Keynote: The Future of AI in India',
         type: 'keynote',
-        description: 'An inspiring look at how AI will transform India\'s future',
+        description: "An inspiring look at how AI will transform India's future",
         location: 'Main Auditorium',
         track: 'Main Track',
         speaker: {
@@ -58,10 +58,11 @@ export const agendaData: AgendaDay[] = [
           image: '/speakers/raj-patel.jpg',
           socialLinks: [
             { platform: 'twitter', url: 'https://twitter.com/rajpatel' },
-            { platform: 'linkedin', url: 'https://linkedin.com/in/rajpatel' }
-          ]
+            { platform: 'linkedin', url: 'https://linkedin.com/in/rajpatel' },
+          ],
         },
-        abstract: 'Explore the transformative potential of AI in India, from healthcare to education...'
+        abstract:
+          'Explore the transformative potential of AI in India, from healthcare to education...',
       },
       {
         id: 'panel-ai-ethics',
@@ -78,9 +79,7 @@ export const agendaData: AgendaDay[] = [
           organization: 'AI Ethics Council',
           bio: 'Leading voice in AI ethics and governance',
           image: '/speakers/maya-singh.jpg',
-          socialLinks: [
-            { platform: 'twitter', url: 'https://twitter.com/mayasingh' }
-          ]
+          socialLinks: [{ platform: 'twitter', url: 'https://twitter.com/mayasingh' }],
         },
         panelists: [
           {
@@ -91,7 +90,7 @@ export const agendaData: AgendaDay[] = [
             bio: 'Expert in AI policy and regulation',
             image: '/speakers/alex-kumar.jpg',
             socialLinks: [],
-            expertise: 'AI Governance'
+            expertise: 'AI Governance',
           },
           {
             id: 'priya-reddy',
@@ -101,15 +100,15 @@ export const agendaData: AgendaDay[] = [
             bio: 'Specialist in ethical AI development',
             image: '/speakers/priya-reddy.jpg',
             socialLinks: [],
-            expertise: 'Ethical AI Development'
-          }
+            expertise: 'Ethical AI Development',
+          },
         ],
         topics: [
           'Responsible AI Development',
           'Ethical Guidelines',
           'Bias in AI Systems',
-          'Future of AI Governance'
-        ]
+          'Future of AI Governance',
+        ],
       },
       {
         id: 'lunch-day1',
@@ -118,7 +117,7 @@ export const agendaData: AgendaDay[] = [
         type: 'break',
         description: 'Enjoy lunch while networking with fellow attendees',
         location: 'Dining Hall',
-        refreshments: ['Full Buffet Lunch', 'Vegetarian Options', 'Desserts']
+        refreshments: ['Full Buffet Lunch', 'Vegetarian Options', 'Desserts'],
       },
       {
         id: 'workshop-ai-products',
@@ -131,23 +130,20 @@ export const agendaData: AgendaDay[] = [
         details: {
           id: 'ai-products-workshop',
           title: 'Building AI-First Products',
-          description: 'Learn how to conceptualize, design, and build products with AI at their core',
+          description:
+            'Learn how to conceptualize, design, and build products with AI at their core',
           duration: '3 hours',
           requirements: [
             'Laptop with Python installed',
             'Basic programming knowledge',
-            'Product design experience'
+            'Product design experience',
           ],
           takeaways: [
             'AI product framework',
             'Design thinking for AI',
-            'Implementation strategies'
+            'Implementation strategies',
           ],
-          materials: [
-            'Workshop slides',
-            'Code templates',
-            'Case study documents'
-          ],
+          materials: ['Workshop slides', 'Code templates', 'Case study documents'],
           capacity: 30,
           organizer: {
             id: 'vikram-mehta',
@@ -156,11 +152,9 @@ export const agendaData: AgendaDay[] = [
             organization: 'AI Products Inc',
             bio: 'Expert in AI product development with 10+ years experience',
             image: '/speakers/vikram-mehta.jpg',
-            socialLinks: [
-              { platform: 'linkedin', url: 'https://linkedin.com/in/vikrammehta' }
-            ]
-          }
-        }
+            socialLinks: [{ platform: 'linkedin', url: 'https://linkedin.com/in/vikrammehta' }],
+          },
+        },
       },
       {
         id: 'entertainment-cultural',
@@ -170,9 +164,9 @@ export const agendaData: AgendaDay[] = [
         description: 'A unique blend of traditional arts and AI-generated content',
         location: 'Cultural Center',
         performer: 'Fusion Arts Collective',
-        genre: 'Mixed Media Performance'
-      }
-    ]
+        genre: 'Mixed Media Performance',
+      },
+    ],
   },
   // Add Day 2 events here...
 ];

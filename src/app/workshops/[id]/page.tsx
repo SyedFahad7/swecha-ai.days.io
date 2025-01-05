@@ -26,7 +26,10 @@ function SocialIcon({ platform }: { platform: string }) {
   }
 }
 
-export default function WorkshopDetailPage({ params }: { params: { id: string } }) {
+type paramsType = Promise<{ id: string }>;
+
+export default async function WorkshopDetailPage(props: { params: paramsType }) {
+  const params = await props.params;
   const workshop = workshopsData.find(w => w.id === params.id);
 
   if (!workshop) {
@@ -69,9 +72,7 @@ export default function WorkshopDetailPage({ params }: { params: { id: string } 
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
                   {workshop.title}
                 </h1>
-                <p className="text-xl text-gray-400 leading-relaxed">
-                  {workshop.description}
-                </p>
+                <p className="text-xl text-gray-400 leading-relaxed">{workshop.description}</p>
               </div>
 
               {/* Instructor */}
@@ -88,8 +89,12 @@ export default function WorkshopDetailPage({ params }: { params: { id: string } 
                       />
                     </div>
                     <div>
-                      <h3 className="text-2xl font-bold text-yellow-200 mb-2">{workshop.instructor.name}</h3>
-                      <p className="text-yellow-100/60 mb-4">{workshop.instructor.role} at {workshop.instructor.organization}</p>
+                      <h3 className="text-2xl font-bold text-yellow-200 mb-2">
+                        {workshop.instructor.name}
+                      </h3>
+                      <p className="text-yellow-100/60 mb-4">
+                        {workshop.instructor.role} at {workshop.instructor.organization}
+                      </p>
                       <p className="text-gray-400 mb-4">{workshop.instructor.bio}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {workshop.instructor.expertise.map((exp, index) => (
@@ -133,7 +138,7 @@ export default function WorkshopDetailPage({ params }: { params: { id: string } 
 
               {/* Learning Outcomes */}
               <div className="space-y-6">
-                <h2 className="text-2xl font-bold text-yellow-300">What You'll Learn</h2>
+                <h2 className="text-2xl font-bold text-yellow-300">What You&39;ll Learn</h2>
                 <div className="grid gap-4">
                   {workshop.learningOutcomes.map((outcome, index) => (
                     <div
@@ -208,8 +213,18 @@ export default function WorkshopDetailPage({ params }: { params: { id: string } 
                 <ul className="space-y-2">
                   {workshop.prerequisites.map((prereq, index) => (
                     <li key={index} className="flex items-center gap-3 text-gray-400">
-                      <svg className="w-5 h-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <svg
+                        className="w-5 h-5 text-yellow-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
                       </svg>
                       {prereq}
                     </li>
@@ -219,12 +234,22 @@ export default function WorkshopDetailPage({ params }: { params: { id: string } 
 
               {/* What's Included */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-yellow-300">What's Included</h3>
+                <h3 className="text-lg font-semibold text-yellow-300">What&#39;s Included</h3>
                 <ul className="space-y-2">
                   {workshop.includes.map((item, index) => (
                     <li key={index} className="flex items-center gap-3 text-gray-400">
-                      <svg className="w-5 h-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <svg
+                        className="w-5 h-5 text-yellow-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M5 13l4 4L19 7"
+                        />
                       </svg>
                       {item}
                     </li>
@@ -238,8 +263,18 @@ export default function WorkshopDetailPage({ params }: { params: { id: string } 
                 <ul className="space-y-2">
                   {workshop.materials.map((material, index) => (
                     <li key={index} className="flex items-center gap-3 text-gray-400">
-                      <svg className="w-5 h-5 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      <svg
+                        className="w-5 h-5 text-yellow-500"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                        />
                       </svg>
                       {material}
                     </li>
