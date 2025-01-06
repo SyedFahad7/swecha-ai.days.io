@@ -3,6 +3,8 @@ import { speakers } from '@/data/speakers';
 import EventRegistrationButton from '@/components/EventRegistrationButton';
 import SpeakerCard from '@/components/SpeakerCard';
 import { isAgendaEnabled, isSponsorsPageEnabled } from '@/featureFlags';
+import { sponsorsData } from '@/data/sponsors';
+import Image from 'next/image';
 
 export default async function Home() {
   const [showAgenda, showWorkshops, showSponsorsPage] = await Promise.all([
@@ -10,6 +12,7 @@ export default async function Home() {
     isAgendaEnabled(),
     isSponsorsPageEnabled(),
   ]);
+  const sponsors = sponsorsData.filter(sponsor => sponsor.id == 'meta');
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background Grid */}
@@ -140,7 +143,30 @@ export default async function Home() {
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
             Our Sponsors
           </h2>
-          {/* Add condensed sponsor logos here */}
+          <section className="py-16 relative overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className=" items-center justify-center gap-8">
+                {sponsors.map(sponsor => (
+                  <div
+                    key={sponsor.id}
+                    className="bg-gradient-to-br from-purple-900/20 to-yellow-900/20 p-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-yellow-500/20 flex flex-col items-center"
+                  >
+                    <div className="w-48 h-48 mb-4 relative">
+                      <Image
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        fill
+                        className="object-contain transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    <h3 className="text-xl text-yellow-300 font-semibold text-center">
+                      {sponsor.name}
+                    </h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
           {showSponsorsPage && (
             <div className="text-center mt-12">
               <Link

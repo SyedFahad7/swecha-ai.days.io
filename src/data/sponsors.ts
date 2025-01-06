@@ -9,6 +9,14 @@ export type Sponsor = {
 
 export const sponsorsData: Sponsor[] = [
   {
+    id: 'meta',
+    name: 'Meta',
+    description: '',
+    logo: '/sponsors/meta.svg',
+    website: 'https://meta.com',
+    tier: 'platinum',
+  },
+  {
     id: 'codeium',
     name: 'Codeium',
     description:
