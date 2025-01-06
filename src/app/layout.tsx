@@ -46,10 +46,36 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const navItems = await getNavItems();
   return (
     <html lang="en">
+      <head>
+        {/* Matomo */}
+        <script>
+          {`
+            var _paq = window._paq = window._paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+              var u="https://analytics.fsmi.in/";
+              _paq.push(['setTrackerUrl', u+'matomo.php']);
+              _paq.push(['setSiteId', '64']);
+              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+              g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+          `}
+        </script>
+        {/* End Matomo Code */}
+      </head>
       <body className={inter.className}>
         <Navbar navItems={navItems} />
         {children}
         <Footer />
+        {/* Matomo Image Tracker */}
+        <img
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://analytics.fsmi.in/matomo.php?idsite=64&rec=1"
+          style={{ border: 0 }}
+          alt=""
+        />
+        {/* End Matomo */}
       </body>
     </html>
   );
