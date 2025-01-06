@@ -62,8 +62,7 @@ export default function SpeakersPage() {
                     <Image
                       src={speaker.image}
                       alt={speaker.name}
-                      width={400}
-                      height={400}
+                      fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
