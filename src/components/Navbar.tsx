@@ -3,16 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import EventRegistrationButton from './EventRegistrationButton';
 
-const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Speakers', path: '/speakers' },
-  { name: 'Agenda', path: '/agenda' },
-  { name: 'Venue', path: '/venue' },
-  { name: 'Workshops', path: '/workshops' },
-  { name: 'Sponsors', path: '/sponsors' },
-];
-
-export default function Navbar() {
+export default function Navbar({ navItems }: { navItems: { name: string; path: string }[] }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
