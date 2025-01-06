@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import EventRegistrationButton from './EventRegistrationButton';
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -24,7 +25,7 @@ export default function Navbar() {
           >
             AI Days
           </Link>
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden xl:flex items-center space-x-8">
             {navItems.map(item => (
               <Link
                 key={item.name}
@@ -35,11 +36,9 @@ export default function Navbar() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
-            <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-sm font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-cyan-500/25 transform hover:scale-105">
-              Registrations Opening Soon
-            </button>
+            <EventRegistrationButton className="px-4 py-2" />
           </div>
-          <div className="md:hidden">
+          <div className="xl:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-300 hover:text-white transition-colors"
@@ -57,7 +56,7 @@ export default function Navbar() {
         </div>
       </div>
       {isOpen && (
-        <div className="md:hidden bg-black/10 backdrop-blur-md">
+        <div className="xl:hidden bg-black/10 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map(item => (
               <Link
@@ -69,9 +68,7 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <button className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-sm font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-cyan-500/25 transform hover:scale-105">
-              Registrations Opening Soon
-            </button>
+            <EventRegistrationButton className="w-full px-4 py-2" />
           </div>
         </div>
       )}
