@@ -48,7 +48,11 @@ To learn more about Next.js, check out these resources:
 
 Contributions to the [Next.js GitHub repository](https://github.com/vercel/next.js) are welcome!
 
-## Deployment
+## Contributing
+
+For guidelines on how to contribute to this project, please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+
+## Deploy on Vercel
 
 For easy deployment, use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
