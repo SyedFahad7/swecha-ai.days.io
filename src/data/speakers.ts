@@ -34,7 +34,7 @@ export const speakers = [
   },
   {
     name: 'Kiran Darisi',
-    role: 'Co-Founder,CTO, Atomicwork',
+    role: 'Co-Founder, CTO, Atomicwork',
     image: '/speakers/Kiran_Darisi.jpg',
     topic: '',
     bio: '',
@@ -45,7 +45,7 @@ export const speakers = [
   },
   {
     name: 'Rahul Kulkarni',
-    role: 'Chief Technologist,Samagra ',
+    role: 'Chief Technologist, Samagra ',
     image: '/speakers/Rahul_Kulkarni.jpg',
     topic: '',
     bio: '',
@@ -56,7 +56,7 @@ export const speakers = [
   },
   {
     name: 'Venkatesh Hariharan',
-    role: 'India Representative,Open Invention Network ',
+    role: 'India Representative, Open Invention Network ',
     image: '/speakers/Venkatesh_Hariharan.jpg',
     topic: '',
     bio: '',
@@ -79,7 +79,7 @@ export const speakers = [
   {
     name: 'Chaitanya Chokkareddy',
     role: 'CTO, Ozontel',
-    image: '/speakers/Chaitanya_chokkareddy.jpg',
+    image: '/speakers/Chaitanya_Chokkareddy.jpg',
     topic: '',
     bio: '',
     social: {
@@ -111,7 +111,7 @@ export const speakers = [
   },
   {
     name: 'Apar Gupta',
-    role: 'Co-Founder,Internet Freedom Foundation ',
+    role: 'Co-Founder, Internet Freedom Foundation ',
     image: '/speakers/Apar_Gupta.jpg',
     topic: '',
     bio: '',
@@ -122,7 +122,7 @@ export const speakers = [
   },
   {
     name: 'CV Jawahar',
-    role: 'Professor and Dean (R&D),IIITH ',
+    role: 'Professor and Dean (R&D), IIITH ',
     image: '/speakers/CV_Jawahar.jpg',
     topic: '',
     bio: '',
