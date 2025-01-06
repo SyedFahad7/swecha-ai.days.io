@@ -14,7 +14,7 @@ export default function Navbar({ navItems }: { navItems: { name: string; path: s
             href="/"
             className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 hover:from-purple-300 hover:to-cyan-300 transition-all duration-300"
           >
-            AI Days
+            AI Days 2025
           </Link>
           <div className="hidden xl:flex items-center space-x-8">
             {navItems.map(item => (
