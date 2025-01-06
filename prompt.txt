@@ -1,0 +1,21 @@
+# AI Collaboration Prompt
+
+As we continue to develop our project, it is essential to adhere to the following guidelines that encompass our design philosophy and thematic elements:
+
+## Design Philosophy
+1. **User-Centric Design**: Always prioritize the user experience in your designs. Consider how users will interact with your components and ensure that they are intuitive and accessible. Design with empathy, keeping the end-user in mind. This includes understanding user needs, behaviors, and motivations to create a design that meets their expectations.
+
+2. **Responsive Design**: Ensure that your designs are responsive and look great on various devices, especially mobile phones, as a significant portion of users will access the application through their mobile devices. Use flexible layouts and media queries to adapt to different screen sizes. Additionally, consider the loading speed and performance of the application on different devices.
+
+3. **Visual Hierarchy**: Use typography and layout to create a clear visual hierarchy that guides users through the content seamlessly. Important information should stand out through size, color, and placement. Use headings, subheadings, and paragraphs to create a clear structure and organization of content.
+
+4. **Consistency**: Maintain a consistent design language throughout the application. This includes using the same color palette, typography, and component styles across different pages to create a cohesive experience. Establish a design system that outlines the usage of different components and elements.
+
+## Thematic Elements
+1. **Color Palette**: Utilize the established color palette that includes vibrant colors like purple, yellow, and cyan against a dark background. This combination enhances readability and creates an engaging atmosphere. Use the 60-30-10 rule to balance the colors and create visual harmony.
+
+2. **Gradient Effects**: Incorporate gradient backgrounds and effects in headings and sections to add depth and visual interest. This technique aligns with our modern aesthetic and should be used thoughtfully. Experiment with different gradient styles and directions to create a unique visual identity.
+
+3. **Background Elements**: Use subtle background elements, such as grid patterns or textures, to add depth without overwhelming the primary content. These should enhance the user experience and not distract from the main information. Use background elements to create a sense of layering and dimensionality.
+
+4. **Interactive Elements**: Design buttons and links with hover effects to enhance user engagement. Ensure that interactive elements are clearly defined and provide feedback upon interaction. Use animations and transitions to create a smooth and engaging user experience. For any secondary button, follow this style: inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300
