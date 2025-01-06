@@ -8,13 +8,13 @@ export default function Navbar({ navItems }: { navItems: { name: string; path: s
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-purple-900/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
             className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 hover:from-purple-300 hover:to-cyan-300 transition-all duration-300"
           >
-            AI Days
+            AI Days 2025
           </Link>
           <div className="hidden xl:flex items-center space-x-8">
             {navItems.map(item => (
