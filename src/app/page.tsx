@@ -2,10 +2,14 @@ import Link from 'next/link';
 import { speakers } from '@/data/speakers';
 import EventRegistrationButton from '@/components/EventRegistrationButton';
 import SpeakerCard from '@/components/SpeakerCard';
-import { isAgendaEnabled } from '@/featureFlags';
+import { isAgendaEnabled, isSponsorsPageEnabled } from '@/featureFlags';
 
 export default async function Home() {
-  const [showAgenda, showWorkshops] = await Promise.all([isAgendaEnabled(), isAgendaEnabled()]);
+  const [showAgenda, showWorkshops, showSponsorsPage] = await Promise.all([
+    isAgendaEnabled(),
+    isAgendaEnabled(),
+    isSponsorsPageEnabled(),
+  ]);
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background Grid */}
@@ -137,14 +141,16 @@ export default async function Home() {
             Our Sponsors
           </h2>
           {/* Add condensed sponsor logos here */}
-          <div className="text-center mt-12">
-            <Link
-              href="/sponsors"
-              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
-            >
-              View All Sponsors
-            </Link>
-          </div>
+          {showSponsorsPage && (
+            <div className="text-center mt-12">
+              <Link
+                href="/sponsors"
+                className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
+              >
+                View All Sponsors
+              </Link>
+            </div>
+          )}
         </div>
       </section>
     </main>
