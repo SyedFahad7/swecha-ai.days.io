@@ -14,6 +14,8 @@ This project is built with [Next.js](https://nextjs.org) and bootstrapped using 
    ```bash
    npm install -g pnpm
    ```
+4. Configure your environment variables in the Vercel dashboard (Optional - This feature is added to hide some in development pages on production):
+   - Set `AGENDA_ENABLED`, `WORKSHOPS_ENABLED`, and `SPONSORS_ENABLED` to control feature flags.
 
 ## Getting Started
 
