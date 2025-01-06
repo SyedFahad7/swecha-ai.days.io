@@ -67,9 +67,27 @@ export default async function Home() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <EventRegistrationButton className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300" />
-            {/* <button className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300">
-              Learn More
-            </button> */}
+            <Link
+              href="https://2024.aidays.io"
+              target="_blank"
+              className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
+            >
+              2024 Highlights
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="inline-block w-5 h-5 ml-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                />
+              </svg>
+            </Link>
           </div>
         </div>
       </div>
