@@ -29,7 +29,7 @@ export default function Footer() {
               Register Now
             </a>
           </div> */}
-          <div className="w-full md:w-1/2 text-right">
+          <div className="w-full md:w-1/2 md:text-right">
             <p className="text-yellow-100/60">Powered by</p>
             <a
               href="https://swecha.org"
@@ -37,13 +37,14 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-block hover:opacity-80 transition-opacity duration-300"
             >
-              <Image
-                src="/images/swecha_light.png"
-                alt="Swecha"
-                width={100}
-                height={100}
-                className="h-8 ml-auto"
-              />
+              <div className="w-24 h-8 mt-5 ml-auto relative">
+                <Image
+                  src="/images/swecha_light.png"
+                  alt="Swecha"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </a>
           </div>
         </div>
