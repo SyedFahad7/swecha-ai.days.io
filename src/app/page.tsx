@@ -67,9 +67,9 @@ export default async function Home() {
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <EventRegistrationButton className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300" />
-            <button className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300">
+            {/* <button className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300">
               Learn More
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
