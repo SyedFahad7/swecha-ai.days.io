@@ -28,11 +28,15 @@ export default function Venue() {
         </div>
 
         <div className="relative max-w-7xl mx-auto mb-24">
-          <iframe
-            width="100%"
-            height="500"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6882984162503!2d78.3713082!3d17.4267401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93f13962ec0d%3A0xa62641b7e702d1e9!2sEngineering%20Staff%20College%20of%20India!5e0!3m2!1sen!2sin!4v1735982402520!5m2!1sen!2sin"
-          ></iframe>
+          <div className="relative p-4 border-2 border-yellow-500/30 rounded-lg overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-yellow-900/10" />
+            <div className="relative z-10">
+              <iframe
+                className="w-full h-[500px] rounded-lg"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6882984162503!2d78.3713082!3d17.4267401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93f13962ec0d%3A0xa62641b7e702d1e9!2sEngineering%20Staff%20College%20of%20India!5e0!3m2!1sen!2sin!4v1735982402520!5m2!1sen!2sin"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </main>
