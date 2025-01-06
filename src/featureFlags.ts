@@ -15,5 +15,10 @@ export const isSponsorsPageEnabled = flag({
   decide: () => process.env.SPONSORS_ENABLED !== '0',
 });
 
+export const isBecomeASponsorEnabled = flag({
+  key: 'sponsor-us',
+  decide: () => process.env.BECOME_SPONSOR_ENABLED !== '0',
+});
+
 // We use flag so that we don't show in progress pages on production.
 // We block it at middleware.ts, and also hide some stuff in the UI.
