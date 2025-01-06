@@ -35,7 +35,7 @@ export default function SponsorsSection({
             </button>
           </div>
         )}
-        {showForm && <SponsorForm onSubmit={() => setShowForm(false)} />}
+        {showForm && <SponsorForm />}
         <div className="flex justify-center items-center mb-12">
           {sponsors.map(sponsor => (
             <div key={sponsor.id} className="mx-4">
