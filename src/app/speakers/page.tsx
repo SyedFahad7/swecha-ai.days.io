@@ -2,6 +2,7 @@ import { speakers } from '@/data/speakers';
 import SpeakerCard from '@/components/SpeakerCard';
 
 export default function SpeakersPage() {
+  const allSpeakersHaveDescription = speakers.every(speaker => speaker.bio != '');
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background Grid Pattern */}
@@ -42,7 +43,13 @@ export default function SpeakersPage() {
           </div>
 
           {speakers.map((speaker, index) => (
-            <SpeakerCard key={index} speaker={speaker} />
+            <SpeakerCard
+              key={index}
+              speaker={speaker}
+              hideDescription={
+                !allSpeakersHaveDescription
+              } /* This is temporary till we have descriptions for all*/
+            />
           ))}
         </div>
       </div>
