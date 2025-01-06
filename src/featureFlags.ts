@@ -1,24 +1,17 @@
 import { unstable_flag as flag } from '@vercel/flags/next';
 
-export const isAgendaEnabled = flag({
-  key: 'agenda',
-  decide: () => process.env.AGENDA_ENABLED !== '0',
-});
+const isEnabled = (envVar: string | undefined) => envVar !== '0';
 
-export const isWorkshopsEnabled = flag({
-  key: 'workshops',
-  decide: () => process.env.WORKSHOPS_ENABLED !== '0',
-});
+const createFlag = (key: string, envVar: string) =>
+  flag({
+    key,
+    decide: () => isEnabled(process.env[envVar]),
+  });
 
-export const isSponsorsPageEnabled = flag({
-  key: 'sponsors',
-  decide: () => process.env.SPONSORS_ENABLED !== '0',
-});
-
-export const isBecomeASponsorEnabled = flag({
-  key: 'sponsor-us',
-  decide: () => process.env.BECOME_SPONSOR_ENABLED !== '0',
-});
+export const isAgendaEnabled = createFlag('agenda', 'AGENDA_ENABLED');
+export const isWorkshopsEnabled = createFlag('workshops', 'WORKSHOPS_ENABLED');
+export const isSponsorsPageEnabled = createFlag('sponsors', 'SPONSORS_ENABLED');
+export const isBecomeASponsorEnabled = createFlag('sponsor-us', 'BECOME_SPONSOR_ENABLED');
 
 // We use flag so that we don't show in progress pages on production.
 // We block it at middleware.ts, and also hide some stuff in the UI.
