@@ -1,10 +1,10 @@
 export const speakers = [
   {
-    name: 'Soumit Chintala',
+    name: 'Soumith Chintala',
     role: 'AI Fixer, Meta',
-    image: '/speakers/soumith.jpg',
+    image: '/speakers/Soumith_Chintala.jpg',
     topic: '',
-    bio: 'AI expert and leader with expertise in advanced algorithms and innovative engineering solutions.',
+    bio: '',
     social: {
       twitter: '',
       linkedin: 'https://www.linkedin.com/in/soumith/',
@@ -13,7 +13,7 @@ export const speakers = [
   {
     name: 'Srinivasa Raju Chintalapati',
     role: 'Chairman, iLabs Capital',
-    image: '/speakers/srinivas.jpg',
+    image: '/speakers/SrinivasaRaju_Chintalapati.jpg',
     topic: '',
     bio: '',
     social: {
@@ -24,7 +24,7 @@ export const speakers = [
   {
     name: 'Renata Avila',
     role: 'CEO, Open Knowledge Foundation',
-    image: '/speakers/Renata.png',
+    image: '/speakers/Renata_Avila.jpeg',
     topic: '',
     bio: '',
     social: {
@@ -35,7 +35,7 @@ export const speakers = [
   {
     name: 'Kiran Darisi',
     role: 'Co-Founder,CTO, Atomicwork',
-    image: '/speakers/Kiran Darisi.jpg',
+    image: '/speakers/Kiran_Darisi.jpg',
     topic: '',
     bio: '',
     social: {
@@ -46,7 +46,7 @@ export const speakers = [
   {
     name: 'Rahul Kulkarni',
     role: 'Chief Technologist,Samagra ',
-    image: '/speakers/Rahul.jpg',
+    image: '/speakers/Rahul_Kulkarni.jpg',
     topic: '',
     bio: '',
     social: {
@@ -57,7 +57,7 @@ export const speakers = [
   {
     name: 'Venkatesh Hariharan',
     role: 'India Representative,Open Invention Network ',
-    image: '/speakers/Venkatesh.jpg',
+    image: '/speakers/Venkatesh_Hariharan.jpg',
     topic: '',
     bio: '',
     social: {
@@ -68,7 +68,7 @@ export const speakers = [
   {
     name: 'Nikhil Pahwa',
     role: 'Founder, MediaNama',
-    image: '/speakers/nikhil.jpg',
+    image: '/speakers/Nikhil_Pahwa.jpg',
     topic: '',
     bio: '',
     social: {
@@ -79,7 +79,7 @@ export const speakers = [
   {
     name: 'Chaitanya Chokkareddy',
     role: 'CTO, Ozontel',
-    image: '/speakers/Chaitanya.jpg',
+    image: '/speakers/Chaitanya_chokkareddy.jpg',
     topic: '',
     bio: '',
     social: {
@@ -90,7 +90,7 @@ export const speakers = [
   {
     name: 'Ramesh Loganathan',
     role: 'Professor Co-innovation/Outreach, IIITH',
-    image: '/speakers/Ramesh.jpg',
+    image: '/speakers/Ramesh_Loganathan.jpg',
     topic: '',
     bio: '',
     social: {
@@ -101,7 +101,7 @@ export const speakers = [
   {
     name: 'Bhavesh Mishra',
     role: 'Deputy Secretary, IT & Electronics Department, Government of Telangana',
-    image: '/speakers/Bhavesh.jpg',
+    image: '/speakers/Bhavesh_Mishra.jpg',
     topic: '',
     bio: '',
     social: {
@@ -112,7 +112,7 @@ export const speakers = [
   {
     name: 'Apar Gupta',
     role: 'Co-Founder,Internet Freedom Foundation ',
-    image: '/speakers/Apar.jpg',
+    image: '/speakers/Apar_Gupta.jpg',
     topic: '',
     bio: '',
     social: {
@@ -123,7 +123,7 @@ export const speakers = [
   {
     name: 'CV Jawahar',
     role: 'Professor and Dean (R&D),IIITH ',
-    image: '/speakers/CV_J.jpg',
+    image: '/speakers/CV_Jawahar.jpg',
     topic: '',
     bio: '',
     social: {
