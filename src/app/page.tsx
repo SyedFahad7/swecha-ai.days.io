@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { speakers } from '@/data/speakers';
 import EventRegistrationButton from '@/components/EventRegistrationButton';
+import SpeakerCard from '@/components/SpeakerCard';
 
 export default function Home() {
   return (
@@ -74,35 +74,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {speakers.slice(0, 3).map((speaker, index) => (
-              <div key={index} className="group relative">
-                <div className="absolute inset-0 bg-[#0A0A0A] border border-yellow-900/30 rounded-lg overflow-hidden">
-                  <div className="absolute inset-0 opacity-50 mix-blend-overlay" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-yellow-900/10" />
-                </div>
-                <div className="relative p-6">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent" />
-                  <div className="mb-6 relative">
-                    <div className="aspect-square overflow-hidden rounded-lg relative">
-                      <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-yellow-500/10" />
-                      <Image
-                        src={speaker.image}
-                        alt={speaker.name}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="absolute inset-0 border border-yellow-500/20 rounded-lg" />
-                    <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/30 to-yellow-500/30 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
-                  </div>
-                  <div className="relative space-y-2">
-                    <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
-                      {speaker.name}
-                    </h3>
-                    <p className="text-purple-300/80 font-medium text-sm">{speaker.role}</p>
-                    <p className="text-yellow-100/60 text-xs">{speaker.topic}</p>
-                  </div>
-                </div>
-              </div>
+              <SpeakerCard key={index} speaker={speaker} hideDescription={true} />
             ))}
           </div>
           <div className="text-center mt-12">
