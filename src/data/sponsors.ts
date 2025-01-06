@@ -12,7 +12,7 @@ export const sponsorsData: Sponsor[] = [
     id: 'meta',
     name: 'Meta',
     description: '',
-    logo: '/sponsors/meta.svg',
+    logo: '/images/sponsors/meta.svg',
     website: 'https://meta.com',
     tier: 'platinum',
   },
