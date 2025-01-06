@@ -2,8 +2,10 @@ import Link from 'next/link';
 import { speakers } from '@/data/speakers';
 import EventRegistrationButton from '@/components/EventRegistrationButton';
 import SpeakerCard from '@/components/SpeakerCard';
+import { isAgendaEnabled } from '@/featureFlags';
 
-export default function Home() {
+export default async function Home() {
+  const [showAgenda, showWorkshops] = await Promise.all([isAgendaEnabled(), isAgendaEnabled()]);
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background Grid */}
@@ -89,40 +91,44 @@ export default function Home() {
       </section>
 
       {/* Agenda Highlights Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-purple-900/20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
-            Agenda Highlights
-          </h2>
-          {/* Add condensed agenda items here */}
-          <div className="text-center mt-12">
-            <Link
-              href="/agenda"
-              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
-            >
-              View Full Agenda
-            </Link>
+      {showAgenda && (
+        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-purple-900/20">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
+              Agenda Highlights
+            </h2>
+            {/* Add condensed agenda items here */}
+            <div className="text-center mt-12">
+              <Link
+                href="/agenda"
+                className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
+              >
+                View Full Agenda
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Workshops Preview Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
-            Workshops
-          </h2>
-          {/* Add condensed workshop previews here */}
-          <div className="text-center mt-12">
-            <Link
-              href="/workshops"
-              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
-            >
-              Explore Workshops
-            </Link>
+      {showWorkshops && (
+        <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
+              Workshops
+            </h2>
+            {/* Add condensed workshop previews here */}
+            <div className="text-center mt-12">
+              <Link
+                href="/workshops"
+                className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
+              >
+                Explore Workshops
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Sponsors Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-cyan-900/20">

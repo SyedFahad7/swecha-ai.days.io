@@ -14,6 +14,9 @@ This project is built with [Next.js](https://nextjs.org) and bootstrapped using 
    ```bash
    npm install -g pnpm
    ```
+4. Configure your environment variables:
+   - Copy `.env.example` to `.env.local` and adjust values as needed.
+   - For production, set `AGENDA_ENABLED`, `WORKSHOPS_ENABLED`, and `SPONSORS_ENABLED` in the Vercel dashboard to control feature flags.
 
 ## Getting Started
 
@@ -37,7 +40,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Contributing
 
-Before contributing to this project, please review our [git guidelines](git-guidelines.md) for information on our development workflow and best practices.
+Before contributing to this project, please review our [git guidelines](git-guidelines.md) for information on our development workflow and best practices. For detailed contribution guidelines, refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## Learn More
 
@@ -47,10 +50,6 @@ To learn more about Next.js, check out these resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 Contributions to the [Next.js GitHub repository](https://github.com/vercel/next.js) are welcome!
-
-## Contributing
-
-For guidelines on how to contribute to this project, please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 ## Deploy on Vercel
 

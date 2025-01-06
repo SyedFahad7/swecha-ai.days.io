@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
+import { isAgendaEnabled, isSponsorsPageEnabled, isWorkshopsEnabled } from '@/featureFlags';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,11 +12,39 @@ export const metadata: Metadata = {
     "Join us for AI Days 2025, India's premier artificial intelligence conference featuring 60+ speakers and 2000+ delegates.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+const getNavItems = async () => {
+  const [agendaEnabled, workshopsEnabled, sponsorsEnabled] = await Promise.all([
+    isAgendaEnabled(),
+    isWorkshopsEnabled(),
+    isSponsorsPageEnabled(),
+  ]);
+
+  let navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Speakers', path: '/speakers' },
+  ];
+
+  if (agendaEnabled) {
+    navItems = [...navItems, { name: 'Agenda', path: '/agenda' }];
+  }
+
+  if (workshopsEnabled) {
+    navItems = [...navItems, { name: 'Workshops', path: '/workshops' }];
+  }
+
+  if (sponsorsEnabled) {
+    navItems = [...navItems, { name: 'Sponsors', path: '/sponsors' }];
+  }
+
+  return navItems;
+};
+
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const navItems = await getNavItems();
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
+        <Navbar navItems={navItems} />
         {children}
       </body>
     </html>
