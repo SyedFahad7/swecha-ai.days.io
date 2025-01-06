@@ -32,7 +32,7 @@ export default function SpeakersPage() {
         </div>
 
         {/* Speakers Grid */}
-        <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 relative">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 relative">
           {/* Decorative lines */}
           <div className="absolute inset-0 grid grid-cols-3 -z-10">
             <div className="border-l border-yellow-900/20 h-full" />
