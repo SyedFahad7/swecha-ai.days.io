@@ -38,7 +38,11 @@ export default async function Home() {
           <p className="text-lg md:text-xl mb-4 text-purple-300 font-medium tracking-wider">
             India&#39;s Largest AI Conference
           </p>
-          <img src="/images/logo.svg" alt="AI Days Logo" className="h-32 w-auto my-12" />
+          <img
+            src="/images/logo.svg"
+            alt="AI Days Logo"
+            className="h-32 w-auto md:my-6 lg:my-12 "
+          />
           <div className="flex items-center justify-center space-x-2 text-xl md:text-2xl mb-8">
             <span className="text-purple-300">📆</span>
             <span className="text-cyan-300">15 - 16 February 2025</span>
