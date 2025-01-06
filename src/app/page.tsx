@@ -19,18 +19,18 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <div className="relative h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
           <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
         </div>
 
-        <div className="relative z-10 text-center px-4">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <p className="text-lg md:text-xl mb-4 text-purple-300 font-medium tracking-wider">
             India&#39;s Largest AI Conference
           </p>
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 animate-pulse">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 animate-pulse">
             AI Days 2025
           </h1>
           <div className="flex items-center justify-center space-x-2 text-xl md:text-2xl mb-8">
@@ -41,7 +41,7 @@ export default function Home() {
             Shaping the Future of AI in India
           </p>
 
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
             {[
               { number: '02', label: 'Days' },
               { number: '60+', label: 'Speakers' },
@@ -49,17 +49,17 @@ export default function Home() {
               { number: '20+', label: 'Workshops' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">
+                <div className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400">
                   {stat.number}
                 </div>
-                <div className="text-gray-400 mt-2">{stat.label}</div>
+                <div className="text-gray-400 mt-2 text-sm md:text-base">{stat.label}</div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col md:flex-row justify-center gap-4">
-            <EventRegistrationButton className="px-8 py-4 border border-purple-500 rounded-full text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300" />
-            <button className="px-8 py-4 border border-purple-500 rounded-full text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <EventRegistrationButton className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300" />
+            <button className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300">
               Learn More
             </button>
           </div>
@@ -69,19 +69,19 @@ export default function Home() {
       {/* Featured Speakers Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
             Featured Speakers
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {speakers.map((speaker, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {speakers.slice(0, 3).map((speaker, index) => (
               <div key={index} className="group relative">
                 <div className="absolute inset-0 bg-[#0A0A0A] border border-yellow-900/30 rounded-lg overflow-hidden">
                   <div className="absolute inset-0 opacity-50 mix-blend-overlay" />
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-yellow-900/10" />
                 </div>
-                <div className="relative p-8">
+                <div className="relative p-6">
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent" />
-                  <div className="mb-8 relative">
+                  <div className="mb-6 relative">
                     <div className="aspect-square overflow-hidden rounded-lg relative">
                       <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-yellow-500/10" />
                       <Image
@@ -95,12 +95,12 @@ export default function Home() {
                     <div className="absolute inset-0 border border-yellow-500/20 rounded-lg" />
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/30 to-yellow-500/30 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
                   </div>
-                  <div className="relative space-y-4">
-                    <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
+                  <div className="relative space-y-2">
+                    <h3 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
                       {speaker.name}
                     </h3>
-                    <p className="text-purple-300/80 font-medium">{speaker.role}</p>
-                    <p className="text-yellow-100/60 text-sm">{speaker.topic}</p>
+                    <p className="text-purple-300/80 font-medium text-sm">{speaker.role}</p>
+                    <p className="text-yellow-100/60 text-xs">{speaker.topic}</p>
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/speakers"
-              className="inline-block px-8 py-3 border border-yellow-500 rounded-full text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
+              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
             >
               View All Speakers
             </Link>
@@ -120,14 +120,14 @@ export default function Home() {
       {/* Agenda Highlights Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-purple-900/20">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
             Agenda Highlights
           </h2>
-          {/* Add agenda items here */}
+          {/* Add condensed agenda items here */}
           <div className="text-center mt-12">
             <Link
               href="/agenda"
-              className="inline-block px-8 py-3 border border-yellow-500 rounded-full text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
+              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
             >
               View Full Agenda
             </Link>
@@ -138,16 +138,14 @@ export default function Home() {
       {/* Workshops Preview Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
             Workshops
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Add workshop previews here */}
-          </div>
+          {/* Add condensed workshop previews here */}
           <div className="text-center mt-12">
             <Link
               href="/workshops"
-              className="inline-block px-8 py-3 border border-yellow-500 rounded-full text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
+              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
             >
               Explore Workshops
             </Link>
@@ -158,14 +156,14 @@ export default function Home() {
       {/* Sponsors Section */}
       <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-cyan-900/20">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
             Our Sponsors
           </h2>
-          {/* Add sponsor logos here */}
+          {/* Add condensed sponsor logos here */}
           <div className="text-center mt-12">
             <Link
               href="/sponsors"
-              className="inline-block px-8 py-3 border border-yellow-500 rounded-full text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
+              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
             >
               View All Sponsors
             </Link>
