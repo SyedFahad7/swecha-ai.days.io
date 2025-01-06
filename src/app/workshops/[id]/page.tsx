@@ -204,7 +204,7 @@ export default async function WorkshopDetailPage(props: { params: paramsType }) 
                 </div>
 
                 <button className="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-yellow-600 rounded-lg text-white font-semibold hover:from-purple-500 hover:to-yellow-500 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-yellow-500/25">
-                  Register Now
+                  Registration Opening Soon
                 </button>
               </div>
 

@@ -6,6 +6,7 @@ const navItems = [
   { name: 'Home', path: '/' },
   { name: 'Speakers', path: '/speakers' },
   { name: 'Agenda', path: '/agenda' },
+  { name: 'Venue', path: '/venue' },
   { name: 'Workshops', path: '/workshops' },
   { name: 'Sponsors', path: '/sponsors' },
 ];
@@ -35,7 +36,7 @@ export default function Navbar() {
               </Link>
             ))}
             <button className="px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-sm font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-cyan-500/25 transform hover:scale-105">
-              Register Now
+              Registrations Opening Soon
             </button>
           </div>
           <div className="md:hidden">
@@ -69,7 +70,7 @@ export default function Navbar() {
               </Link>
             ))}
             <button className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-sm font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:shadow-cyan-500/25 transform hover:scale-105">
-              Register Now
+              Registrations Opening Soon
             </button>
           </div>
         </div>
