@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-12 relative overflow-hidden">
@@ -33,9 +35,15 @@ export default function Footer() {
               href="https://swecha.org"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xl font-semibold hover:text-yellow-300 transition-colors duration-300"
+              className="inline-block hover:opacity-80 transition-opacity duration-300"
             >
-              Swecha
+              <Image
+                src="/images/swecha_light.png"
+                alt="Swecha"
+                width={100}
+                height={100}
+                className="h-8 ml-auto"
+              />
             </a>
           </div>
         </div>
