@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import { isAgendaEnabled, isSponsorsPageEnabled, isWorkshopsEnabled } from '@/featureFlags';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -48,6 +49,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={inter.className}>
         <Navbar navItems={navItems} />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -18,4 +18,4 @@ As we continue to develop our project, it is essential to adhere to the followin
 
 3. **Background Elements**: Use subtle background elements, such as grid patterns or textures, to add depth without overwhelming the primary content. These should enhance the user experience and not distract from the main information. Use background elements to create a sense of layering and dimensionality.
 
-4. **Interactive Elements**: Design buttons and links with hover effects to enhance user engagement. Ensure that interactive elements are clearly defined and provide feedback upon interaction. Use animations and transitions to create a smooth and engaging user experience.
+4. **Interactive Elements**: Design buttons and links with hover effects to enhance user engagement. Ensure that interactive elements are clearly defined and provide feedback upon interaction. Use animations and transitions to create a smooth and engaging user experience. For any secondary button, follow this style: inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300
