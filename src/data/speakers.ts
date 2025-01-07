@@ -33,17 +33,6 @@ export const speakers = [
     },
   },
   {
-    name: 'Kiran Darisi',
-    role: 'Co-Founder, CTO, Atomicwork',
-    image: '/speakers/Kiran_Darisi.jpg',
-    topic: '',
-    bio: '',
-    social: {
-      twitter: '',
-      linkedin: 'https://www.linkedin.com/in/kirandarisi/',
-    },
-  },
-  {
     name: 'Rahul Kulkarni',
     role: 'Chief Technologist, Samagra ',
     image: '/speakers/Rahul_Kulkarni.jpg',
