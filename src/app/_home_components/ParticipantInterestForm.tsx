@@ -4,9 +4,11 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { config } from '@/config';
 import { AnimatePresence, motion } from 'framer-motion';
+
 const formSchema = z.object({
   fullName: z.string().min(1, "Oops! We didn't catch your name"),
   email: z.string().email('Hmm, that email looks a bit off. Mind double-checking?'),
+  phone: z.string().min(10, "A bit short for a phone number, isn't it?"),
   interests: z.array(z.string()).min(1, "Pick at least one interest - we're curious!"),
   otherInterest: z.string().optional(),
   isStudent: z.boolean(),
@@ -41,10 +43,20 @@ export function ParticipantInterestForm() {
         );
         return;
       }
+      const humanReadableData = {
+        'Full Name': data.fullName,
+        'Email Address': data.email,
+        'Phone Number': data.phone,
+        Interests: data.interests.join(', '),
+        'Other Interest': data.otherInterest || '',
+        'Is Student': data.isStudent ? 'Yes' : 'No',
+        'Designation or Course/Major': data.designation || '',
+        'Organization or Institution': data.organization || '',
+      };
       const response = await fetch(config.PARTICIPANT_INTEREST_FORM_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(humanReadableData),
       });
 
       if (response.ok) {
@@ -102,6 +114,19 @@ export function ParticipantInterestForm() {
           />
           {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
           <p className="mt-1 text-xs text-gray-400">For updates and registration details</p>
+        </div>
+
+        <div>
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
+            Phone Number (Required)
+          </label>
+          <input
+            {...register('phone')}
+            id="phone"
+            type="tel"
+            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
+          />
+          {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>}
         </div>
 
         <div>
