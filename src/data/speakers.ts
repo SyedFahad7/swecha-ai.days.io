@@ -120,4 +120,15 @@ export const speakers = [
       linkedin: 'https://www.linkedin.com/in/cv-jawahar-849376318/',
     },
   },
+  {
+    name: 'Vijay Rayapati',
+    role: 'CEO, Atomicwork',
+    image: '/speakers/Vijay_Rayapati.jpg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/amnigos/',
+    },
+  },
 ];
