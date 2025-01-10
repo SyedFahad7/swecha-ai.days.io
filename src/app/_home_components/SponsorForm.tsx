@@ -17,7 +17,7 @@ const schema = z.object({
       /^(https?:\/\/)?(www\.)?[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,})$/,
       'Please enter a valid website URL'
     )
-    .optional(),
+    .or(z.literal('')),
   message: z.string().min(10, 'Mind sharing a bit more in your message?'),
 });
 

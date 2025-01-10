@@ -69,11 +69,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {children}
         <Footer />
         {/* Matomo Image Tracker */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           referrerPolicy="no-referrer-when-downgrade"
           src="https://analytics.fsmi.in/matomo.php?idsite=64&rec=1"
           style={{ border: 0 }}
           alt=""
+          suppressHydrationWarning
         />
         {/* End Matomo */}
       </body>
