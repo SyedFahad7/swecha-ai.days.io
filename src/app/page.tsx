@@ -4,6 +4,7 @@ import EventRegistrationButton from '@/components/EventRegistrationButton';
 import SpeakerCard from '@/components/SpeakerCard';
 import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from '@/featureFlags';
 import SponsorsSection from './_home_components/SponsorsSection';
+import Image from 'next/image';
 
 export default async function Home() {
   const [showAgenda, showWorkshops, showSponsorsPage, showBecomeSponsor] = await Promise.all([
@@ -38,9 +39,12 @@ export default async function Home() {
           <p className="text-lg md:text-xl mb-4 text-purple-300 font-medium tracking-wider">
             India&#39;s Largest AI Conference
           </p>
-          <img
+          <Image
             src="/images/logo.svg"
             alt="AI Days Logo"
+            height={128}
+            width={652}
+            // fill
             className="h-32 w-auto md:my-6 lg:my-12 "
           />
           <div className="flex items-center justify-center space-x-2 text-xl md:text-2xl mb-8">
