@@ -8,9 +8,13 @@ import { config } from '@/config';
 
 interface EventRegistrationButtonProps {
   className?: string;
+  openInterestFromByDefault?: boolean;
 }
 
-const EventRegistrationButton: React.FC<EventRegistrationButtonProps> = ({ className }) => {
+const EventRegistrationButton: React.FC<EventRegistrationButtonProps> = ({
+  className,
+  openInterestFromByDefault,
+}) => {
   if (config.REGISTRATION_LINK) {
     return (
       <a
@@ -27,7 +31,7 @@ const EventRegistrationButton: React.FC<EventRegistrationButtonProps> = ({ class
 
   if (config.PARTICIPANT_INTEREST_FORM_URL) {
     return (
-      <Dialog>
+      <Dialog defaultOpen={openInterestFromByDefault}>
         <DialogTrigger asChild>
           <button
             className={cn(

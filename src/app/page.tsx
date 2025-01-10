@@ -6,13 +6,22 @@ import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from 
 import SponsorsSection from './_home_components/SponsorsSection';
 import Image from 'next/image';
 
-export default async function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
   const [showAgenda, showWorkshops, showSponsorsPage, showBecomeSponsor] = await Promise.all([
     isAgendaEnabled(),
     isAgendaEnabled(),
     isSponsorsPageEnabled(),
     isBecomeASponsorEnabled(),
   ]);
+
+  const displayInterestForm = (await searchParams)['display-interest-form'] === '1';
+  console.log({
+    searchparams: await searchParams,
+  });
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background Grid */}
@@ -44,7 +53,6 @@ export default async function Home() {
             alt="AI Days Logo"
             height={128}
             width={652}
-            // fill
             className="h-32 w-auto md:my-6 lg:my-12 "
           />
           <div className="flex items-center justify-center space-x-2 text-xl md:text-2xl mb-8">
@@ -72,7 +80,10 @@ export default async function Home() {
           </div>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <EventRegistrationButton className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300" />
+            <EventRegistrationButton
+              className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
+              openInterestFromByDefault={displayInterestForm}
+            />
             <Link
               href="https://2024.aidays.io"
               target="_blank"
