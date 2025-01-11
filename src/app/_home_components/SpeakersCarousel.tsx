@@ -29,6 +29,7 @@ export default function SpeakersCarousel() {
 
   const handleScroll = (e: React.WheelEvent) => {
     if (containerRef.current) {
+      e.preventDefault();
       containerRef.current.scrollLeft += e.deltaY;
     }
   };
@@ -67,6 +68,7 @@ export default function SpeakersCarousel() {
       onMouseLeave={handleMouseLeave}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
+      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
     >
       {[...speakers, ...speakers].map((speaker, index) => (
         <motion.div
