@@ -20,16 +20,16 @@ interface SpeakerCardProps {
 
 const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, hideDescription = false }) => {
   return (
-    <div className="group relative">
+    <div className="group relative h-full flex flex-col">
       <div className="absolute inset-0 bg-[#0A0A0A] border border-yellow-900/30 rounded-lg overflow-hidden">
         <div className="absolute inset-0 opacity-50 mix-blend-overlay" />
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-yellow-900/10" />
       </div>
-      <div className="relative p-8">
+      <div className="relative p-8 flex-1 flex flex-col">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent" />
 
-        <div className="mb-8 relative">
-          <div className="aspect-square overflow-hidden rounded-lg relative">
+        <div className="mb-8 relative w-full pb-[100%]">
+          <div className="absolute inset-0 overflow-hidden rounded-lg">
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-yellow-500/10" />
             <Image
               src={speaker.image}
@@ -42,17 +42,20 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, hideDescription = fa
           <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/30 to-yellow-500/30 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
         </div>
 
-        <div className="relative space-y-4">
-          <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
-            {speaker.name}
-          </h3>
-          <p className="text-purple-300/80 font-medium">{speaker.role}</p>
-          <p className="text-yellow-100/60 text-sm">{speaker.topic}</p>
+        <div className="flex-1 flex flex-col justify-between space-y-4">
+          <div>
+            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
+              {speaker.name}
+            </h3>
+            <p className="text-purple-300/80 font-medium">{speaker.role}</p>
+            <p className="text-yellow-100/60 text-sm">{speaker.topic}</p>
+          </div>
+
           {!hideDescription && (
             <p className="text-gray-400/80 text-sm leading-relaxed">{speaker.bio}</p>
           )}
 
-          <div className="pt-6 flex gap-4">
+          <div className="pt-4 flex gap-4">
             {speaker.social.twitter && (
               <Link
                 href={speaker.social.twitter}
