@@ -55,7 +55,7 @@ export default function SpeakersCarousel() {
 
   useLayoutEffect(() => {
     const autoScroll = setInterval(() => {
-      if (containerRef.current) {
+      if (containerRef.current && !isDragging) {
         containerRef.current.scrollLeft += 1;
         if (
           containerRef.current.scrollLeft >=
@@ -67,7 +67,7 @@ export default function SpeakersCarousel() {
     }, 50);
 
     return () => clearInterval(autoScroll);
-  }, []);
+  }, [isDragging]);
 
   const handleScroll = (e: React.WheelEvent) => {
     if (containerRef.current) {
@@ -76,19 +76,20 @@ export default function SpeakersCarousel() {
     }
   };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
+  const handleDragStart = (e: React.TouchEvent | React.MouseEvent) => {
     setIsDragging(true);
-    setStartX(e.pageX - containerRef.current!.offsetLeft);
+    setStartX('touches' in e ? e.touches[0].pageX : e.pageX);
     setScrollLeft(containerRef.current!.scrollLeft);
   };
 
-  const handleMouseLeave = () => setIsDragging(false);
-  const handleMouseUp = () => setIsDragging(false);
+  const handleDragEnd = () => {
+    setIsDragging(false);
+  };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleDragMove = (e: React.TouchEvent | React.MouseEvent) => {
     if (!isDragging) return;
     e.preventDefault();
-    const x = e.pageX - containerRef.current!.offsetLeft;
+    const x = 'touches' in e ? e.touches[0].pageX : e.pageX;
     const walk = (x - startX) * 2;
     containerRef.current!.scrollLeft = scrollLeft - walk;
   };
@@ -101,16 +102,20 @@ export default function SpeakersCarousel() {
       animate={controls}
       transition={{ duration: 0.5 }}
       onWheel={handleScroll}
-      onMouseDown={handleMouseDown}
-      onMouseLeave={handleMouseLeave}
-      onMouseUp={handleMouseUp}
-      onMouseMove={handleMouseMove}
+      onMouseDown={handleDragStart}
+      onMouseLeave={handleDragEnd}
+      onMouseUp={handleDragEnd}
+      onMouseMove={handleDragMove}
+      onTouchStart={handleDragStart}
+      onTouchEnd={handleDragEnd}
+      onTouchMove={handleDragMove}
       style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', userSelect: 'none' }}
     >
       {displayedSpeakers.map((speaker, index) => (
         <motion.div
           key={`${speaker.name}-${index}`}
           className="w-full sm:w-1/3 lg:w-1/4 flex-shrink-0 px-4"
+          style={{ touchAction: 'none' }}
         >
           <SpeakerCard speaker={speaker} hideDescription={true} />
         </motion.div>
