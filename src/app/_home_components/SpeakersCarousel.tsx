@@ -59,7 +59,7 @@ export default function SpeakersCarousel() {
   return (
     <motion.div
       ref={containerRef}
-      className="flex overflow-x-scroll scrollbar-hide"
+      className="flex overflow-x-scroll scrollbar-hide cursor-grab active:cursor-grabbing"
       initial={{ x: 0 }}
       animate={controls}
       transition={{ duration: 0.5 }}
