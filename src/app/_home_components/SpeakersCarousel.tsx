@@ -68,7 +68,7 @@ export default function SpeakersCarousel() {
       onMouseLeave={handleMouseLeave}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
-      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', userSelect: 'none' }}
     >
       {[...speakers, ...speakers].map((speaker, index) => (
         <motion.div
