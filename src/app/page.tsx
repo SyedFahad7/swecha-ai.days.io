@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { speakers } from '@/data/speakers';
 import EventRegistrationButton from '@/components/EventRegistrationButton';
-import SpeakerCard from '@/components/SpeakerCard';
 import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from '@/featureFlags';
 import SponsorsSection from './_home_components/SponsorsSection';
 import Image from 'next/image';
+import SpeakersCarousel from './_home_components/SpeakersCarousel';
 
 export default async function Home({
   searchParams,
@@ -110,22 +109,21 @@ export default async function Home({
       </div>
 
       {/* Featured Speakers Section */}
-      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
             Our Speakers
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {speakers.slice(0, 3).map((speaker, index) => (
-              <SpeakerCard key={index} speaker={speaker} hideDescription={true} />
-            ))}
+          <div className="relative overflow-hidden">
+            <SpeakersCarousel />
           </div>
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 relative z-10">
             <Link
               href="/speakers"
-              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300"
+              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300 relative overflow-hidden group"
             >
-              View All Speakers
+              <span className="relative z-10">View All Speakers</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/50 to-yellow-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </div>
         </div>
