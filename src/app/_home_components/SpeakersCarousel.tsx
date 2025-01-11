@@ -2,7 +2,7 @@
 import { motion, useAnimationControls } from 'framer-motion';
 import SpeakerCard from '@/components/SpeakerCard';
 import { speakers } from '@/data/speakers';
-import { useRef, useState, useLayoutEffect, useCallback, useMemo, useEffect } from 'react';
+import { useRef, useState, useLayoutEffect, useCallback, useMemo } from 'react';
 
 export default function SpeakersCarousel() {
   const controls = useAnimationControls();
@@ -11,7 +11,6 @@ export default function SpeakersCarousel() {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [displayCount, setDisplayCount] = useState(3);
-  const [visibleSpeakers, setVisibleSpeakers] = useState<number[]>([]);
 
   const displayedSpeakers = useMemo(() => {
     const repeatedSpeakers = Array(displayCount).fill(speakers).flat();
@@ -20,15 +19,6 @@ export default function SpeakersCarousel() {
 
   const appendSpeakers = useCallback(() => {
     setDisplayCount(prevCount => prevCount + 1);
-  }, []);
-
-  const updateVisibleSpeakers = useCallback(() => {
-    if (!containerRef.current) return;
-    const container = containerRef.current;
-    const { scrollLeft, clientWidth } = container;
-    const startIndex = Math.floor(scrollLeft / (clientWidth / 4));
-    const endIndex = Math.ceil((scrollLeft + clientWidth) / (clientWidth / 4));
-    setVisibleSpeakers(Array.from({ length: endIndex - startIndex }, (_, i) => startIndex + i));
   }, []);
 
   useLayoutEffect(() => {
@@ -40,7 +30,6 @@ export default function SpeakersCarousel() {
       if (scrollWidth - (scrollLeft + clientWidth) < clientWidth * 3) {
         appendSpeakers();
       }
-      updateVisibleSpeakers();
     };
 
     const observer = new IntersectionObserver(
@@ -62,11 +51,7 @@ export default function SpeakersCarousel() {
       container.removeEventListener('scroll', handleScroll);
       observer.disconnect();
     };
-  }, [appendSpeakers, updateVisibleSpeakers]);
-
-  useEffect(() => {
-    updateVisibleSpeakers();
-  }, [updateVisibleSpeakers]);
+  }, [appendSpeakers]);
 
   useLayoutEffect(() => {
     const autoScroll = setInterval(() => {
@@ -78,18 +63,16 @@ export default function SpeakersCarousel() {
         ) {
           containerRef.current.scrollLeft = 0;
         }
-        updateVisibleSpeakers();
       }
     }, 50);
 
     return () => clearInterval(autoScroll);
-  }, [updateVisibleSpeakers]);
+  }, []);
 
   const handleScroll = (e: React.WheelEvent) => {
     if (containerRef.current) {
       e.preventDefault();
       containerRef.current.scrollLeft += e.deltaY;
-      updateVisibleSpeakers();
     }
   };
 
@@ -108,7 +91,6 @@ export default function SpeakersCarousel() {
     const x = e.pageX - containerRef.current!.offsetLeft;
     const walk = (x - startX) * 2;
     containerRef.current!.scrollLeft = scrollLeft - walk;
-    updateVisibleSpeakers();
   };
 
   return (
@@ -129,16 +111,8 @@ export default function SpeakersCarousel() {
         <motion.div
           key={`${speaker.name}-${index}`}
           className="w-full sm:w-1/3 lg:w-1/4 flex-shrink-0 px-4"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{
-            opacity: visibleSpeakers.includes(index) ? 1 : 0,
-            y: visibleSpeakers.includes(index) ? 0 : 50,
-          }}
-          transition={{ duration: 0.5 }}
         >
-          {visibleSpeakers.includes(index) && (
-            <SpeakerCard speaker={speaker} hideDescription={true} />
-          )}
+          <SpeakerCard speaker={speaker} hideDescription={true} />
         </motion.div>
       ))}
     </motion.div>
