@@ -73,12 +73,14 @@ export default function SpeakersCarousel() {
       {[...speakers, ...speakers].map((speaker, index) => (
         <motion.div
           key={index}
-          className="w-full sm:w-1/3 lg:w-1/4 flex-shrink-0 px-4"
+          className="w-full sm:w-1/3 lg:w-1/4 flex-shrink-0 px-4 max-h-full"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
         >
-          <SpeakerCard speaker={speaker} hideDescription={true} />
+          <div className="h-full">
+            <SpeakerCard speaker={speaker} hideDescription={true} />
+          </div>
         </motion.div>
       ))}
     </motion.div>
