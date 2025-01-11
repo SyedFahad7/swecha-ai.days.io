@@ -114,7 +114,7 @@ export default function SpeakersCarousel() {
   return (
     <motion.div
       ref={containerRef}
-      className="flex overflow-x-scroll scrollbar-hide cursor-grab active:cursor-grabbing"
+      className="flex overflow-x-scroll overflow-y-hidden scrollbar-hide cursor-grab active:cursor-grabbing"
       initial={{ x: 0 }}
       animate={controls}
       transition={{ duration: 0.5 }}
@@ -128,7 +128,7 @@ export default function SpeakersCarousel() {
       {displayedSpeakers.map((speaker, index) => (
         <motion.div
           key={`${speaker.name}-${index}`}
-          className="w-full sm:w-1/3 lg:w-1/4 flex-shrink-0 px-4 max-h-full"
+          className="w-full sm:w-1/3 lg:w-1/4 flex-shrink-0 px-4"
           initial={{ opacity: 0, y: 50 }}
           animate={{
             opacity: visibleSpeakers.includes(index) ? 1 : 0,
@@ -136,11 +136,9 @@ export default function SpeakersCarousel() {
           }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-full">
-            {visibleSpeakers.includes(index) && (
-              <SpeakerCard speaker={speaker} hideDescription={true} />
-            )}
-          </div>
+          {visibleSpeakers.includes(index) && (
+            <SpeakerCard speaker={speaker} hideDescription={true} />
+          )}
         </motion.div>
       ))}
     </motion.div>
