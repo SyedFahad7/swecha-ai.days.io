@@ -56,7 +56,7 @@ export default async function Home({
           />
           <div className="flex items-center justify-center space-x-2 text-xl md:text-2xl mb-8">
             <span className="text-purple-300">📆</span>
-            <span className="text-cyan-300">15 - 16 February 2025</span>
+            <span className="text-cyan-300">Announcing Soon</span>
           </div>
           <p className="text-xl md:text-2xl mb-12 text-gray-300">
             Shaping the Future of AI in India
