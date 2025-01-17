@@ -8,9 +8,63 @@ import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "AI Days 2025 - India's Largest AI Conference",
+  title: "AI Days 2025 - India's Premier AI Conference",
   description:
-    "Join us for AI Days 2025, India's premier artificial intelligence conference featuring 60+ speakers and 2000+ delegates.",
+    "Join us for AI Days 2025, India's leading artificial intelligence conference featuring 60+ speakers and cutting-edge AI innovations.",
+  keywords:
+    'AI conference, artificial intelligence, tech event, India AI, machine learning, deep learning, AI Days 2025',
+  authors: [{ name: 'Swecha' }],
+  creator: 'Swecha',
+  publisher: 'Swecha',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://aidays.io'),
+  openGraph: {
+    title: "AI Days 2025 - India's Premier AI Conference",
+    description:
+      "Join us for AI Days 2025, India's leading artificial intelligence conference featuring 60+ speakers and cutting-edge AI innovations.",
+    url: 'https://aidays.swecha.org',
+    siteName: 'AI Days 2025',
+    images: [
+      {
+        url: '/images/Swecha AI.jpg',
+        width: 800,
+        height: 600,
+        alt: 'AI Days 2025 Conference',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "AI Days 2025 - India's Premier AI Conference",
+    description:
+      "Join us for AI Days 2025, India's leading artificial intelligence conference featuring 60+ speakers and cutting-edge AI innovations.",
+    images: ['/images/swecha_light.png'],
+    creator: '@SwechaFSMI',
+    site: '@SwechaFSMI',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+  category: 'technology',
 };
 
 const getNavItems = async () => {
