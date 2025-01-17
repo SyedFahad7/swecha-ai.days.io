@@ -18,9 +18,6 @@ export default async function Home({
   ]);
 
   const displayInterestForm = (await searchParams)['display-interest-form'] === '1';
-  console.log({
-    searchparams: await searchParams,
-  });
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background Grid */}

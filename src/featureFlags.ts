@@ -13,5 +13,12 @@ export const isWorkshopsEnabled = createFlag('workshops', 'WORKSHOPS_ENABLED');
 export const isSponsorsPageEnabled = createFlag('sponsors', 'SPONSORS_ENABLED');
 export const isBecomeASponsorEnabled = createFlag('sponsor-us', 'BECOME_SPONSOR_ENABLED');
 
+export const middleWareFlags = [
+  isAgendaEnabled,
+  isWorkshopsEnabled,
+  isSponsorsPageEnabled,
+  isBecomeASponsorEnabled,
+];
+
 // We use flag so that we don't show in progress pages on production.
 // We block it at middleware.ts, and also hide some stuff in the UI.
