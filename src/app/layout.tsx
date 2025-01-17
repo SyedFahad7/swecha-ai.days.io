@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: "AI Days 2025 - India's Premier AI Conference",
     description:
       "Join us for AI Days 2025, India's leading artificial intelligence conference featuring 60+ speakers and cutting-edge AI innovations.",
-    url: 'https://aidays.swecha.org',
+    url: 'https://aidays.io',
     siteName: 'AI Days 2025',
     images: [
       {
