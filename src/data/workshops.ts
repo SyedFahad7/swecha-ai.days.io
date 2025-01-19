@@ -1,128 +1,304 @@
 import { Workshop } from '@/types/workshops';
 
 export const workshopsData: Workshop[] = [
+  // Session 1 (Common Topic)
   {
-    id: 'ai-personality',
-    title: 'Crafting AI Personality & Temperament',
+    id: 'prompt-engineering',
+    title: "Unlocking AI's Potential: Your Guide to Prompt Engineering",
     description:
-      'Explore the art of designing AI systems with distinct personalities. Learn to create AI agents with emotional intelligence and appropriate response patterns.',
-    longDescription: `In this intensive workshop, you'll dive deep into the fascinating world of AI personality design. Learn how to create AI systems that don't just process information, but interact with users in meaningful, emotionally intelligent ways.
+      'Understand the art of crafting effective prompts to interact seamlessly with AI models.',
+    longDescription: `What to Expect:
+- Introduction to Prompt Engineering: Understand the art of crafting effective prompts to interact seamlessly with AI models.
+- Hands-On Practice: Engage in interactive sessions to create and test your own prompts.
+- Real-World Applications: Discover how prompt engineering is transforming industries and improving productivity.
 
-We'll explore advanced techniques in natural language processing, sentiment analysis, and behavioral modeling to create AI personalities that are both engaging and appropriate for their intended use cases.
-
-The workshop combines theoretical knowledge with hands-on exercises, allowing you to experiment with different personality types and response patterns.`,
-    duration: '3 hours',
-    date: '2025-02-15',
-    time: '14:00 - 17:00',
-    location: 'Workshop Room A',
+Why Should You Attend?
+- No Prior Experience Needed: Designed for beginners, this workshop requires no coding or AI background.
+- Enhance Productivity: Learn skills that can streamline your workflow and boost efficiency.
+- Stay Ahead of the Curve: Gain insights into AI technologies that are becoming essential in today's job market.`,
+    duration: '',
+    date: '',
+    time: '',
+    location: '',
     instructor: {
-      id: 'maya-patel',
-      name: 'Dr. Maya Patel',
-      role: 'AI Psychology Expert',
-      organization: 'Institute of AI Behavior',
-      bio: 'Dr. Maya Patel is a pioneer in AI psychology and personality design. With over 15 years of experience in cognitive science and AI development, she has helped shape the personality frameworks of several major AI assistants.',
-      image: '/speakers/maya-patel.jpg',
-      expertise: ['AI Psychology', 'Cognitive Science', 'Machine Learning'],
-      socialLinks: [
-        { platform: 'twitter', url: 'https://twitter.com/mayapatel' },
-        { platform: 'linkedin', url: 'https://linkedin.com/in/mayapatel' },
-      ],
+      id: '',
+      name: '',
+      role: '',
+      organization: '',
+      bio: '',
+      image: '',
+      expertise: [],
+      socialLinks: [],
     },
-    level: 'Advanced',
-    prerequisites: ['Basic ML knowledge', 'Python programming', 'Understanding of NLP concepts'],
+    level: 'Beginner',
+    prerequisites: [],
+    topics: ['Introduction to Prompt Engineering', 'Hands-On Practice', 'Real-World Applications'],
+    learningOutcomes: [],
+    category: 'Session 1',
+    materials: [],
+    capacity: 0,
+    price: '',
+    includes: [],
+  },
+  // Session 2 Workshops
+  {
+    id: 'multi-agent-systems',
+    title: 'Build AI Solutions Without Coding: Multi-Agent Systems Made Easy',
+    description: 'Learn the basics of AI agents and their collaborative problem-solving abilities.',
+    longDescription: `What to Expect:
+- Introduction to Multi-Agent Systems: Learn the basics of AI agents and their collaborative problem-solving abilities.
+- Low Code/No Code Platforms: Get hands-on experience with tools like dify.ai to create AI-driven solutions.
+- Project-Based Learning: Develop a functional AI application by the end of the workshop.
+- Industry Insights: Explore real-world examples of multi-agent systems in action.
+
+Why Should You Attend?
+- Empower Yourself: Create AI applications without the need for extensive coding knowledge.
+- Practical Skills: Develop solutions that can be immediately applied to your professional environment.
+- Innovate with AI: Understand how to leverage AI to solve complex problems efficiently.`,
+    duration: '',
+    date: '',
+    time: '',
+    location: '',
+    instructor: {
+      id: '',
+      name: '',
+      role: '',
+      organization: '',
+      bio: '',
+      image: '',
+      expertise: [],
+      socialLinks: [],
+    },
+    level: 'Beginner',
+    prerequisites: [],
     topics: [
-      'Emotional response mapping',
-      'Personality matrix design',
-      'Ethical considerations',
-      'Behavioral testing',
-      'Sentiment analysis integration',
-      'Response pattern optimization',
+      'Introduction to Multi-Agent Systems',
+      'Low Code/No Code Platforms',
+      'Project-Based Learning',
+      'Industry Insights',
     ],
-    learningOutcomes: [
-      'Design comprehensive AI personality frameworks',
-      'Implement emotional intelligence in AI systems',
-      'Create appropriate response patterns',
-      'Test and validate AI behavior',
-      'Ensure ethical compliance in personality design',
-    ],
-    category: 'AI Design',
-    materials: [
-      'Personality design toolkit',
-      'Code templates',
-      'Testing frameworks',
-      'Case studies',
-      'Reference documentation',
-    ],
-    capacity: 30,
-    price: '₹15,000',
-    includes: [
-      'Workshop materials',
-      'Lunch and refreshments',
-      'Certificate of completion',
-      '1-month access to online resources',
-    ],
+    learningOutcomes: [],
+    category: 'Session 2',
+    materials: [],
+    capacity: 0,
+    price: '',
+    includes: [],
   },
   {
-    id: 'ethical-bounds',
-    title: 'Setting Ethical Boundaries in AI',
-    description:
-      'Hands-on workshop on implementing ethical guidelines and moral frameworks in AI systems. Create AIs that respect human values and societal norms.',
-    longDescription: `This comprehensive workshop focuses on the critical aspect of embedding ethical principles into AI systems. You'll learn practical approaches to implementing moral frameworks and ensuring AI systems operate within acceptable ethical boundaries.
+    id: 'ai-productivity',
+    title: 'Boost Your Efficiency: AI Tools for Everyday Productivity for Managers and Leads',
+    description: 'Discover a range of open-source AI tools designed to enhance daily tasks.',
+    longDescription: `What to Expect:
+- Overview of AI Productivity Tools: Discover a range of open-source AI tools designed to enhance daily tasks.
+- Hands-On Demonstrations: Learn how to integrate these tools into your workflow.
+- Customization Techniques: Tailor AI tools to meet your specific needs.
+- Success Stories: Hear from professionals who have significantly improved productivity using AI.
 
-Through real-world case studies and hands-on exercises, participants will explore various ethical challenges in AI development and learn proven strategies for addressing them. The workshop emphasizes both theoretical understanding and practical implementation.`,
-    duration: '4 hours',
-    date: '2025-02-15',
-    time: '09:00 - 13:00',
-    location: 'Workshop Room B',
+Why Should You Attend?
+- Immediate Impact: Implement AI tools that can enhance your productivity from day one.
+- User-Friendly Applications: No technical background required to utilize these tools effectively.
+- Competitive Advantage: Stay competitive in the job market by adopting the latest AI technologies.`,
+    duration: '',
+    date: '',
+    time: '',
+    location: '',
     instructor: {
-      id: 'sarah-chen',
-      name: 'Prof. Sarah Chen',
-      role: 'AI Ethics Researcher',
-      organization: 'Global AI Ethics Institute',
-      bio: 'Prof. Sarah Chen is a leading authority in AI ethics and responsible AI development. Her research focuses on creating practical frameworks for ethical AI implementation.',
-      image: '/speakers/sarah-chen.jpg',
-      expertise: ['AI Ethics', 'Policy Development', 'Responsible AI'],
-      socialLinks: [
-        { platform: 'twitter', url: 'https://twitter.com/sarahchen' },
-        { platform: 'linkedin', url: 'https://linkedin.com/in/sarahchen' },
-      ],
+      id: '',
+      name: '',
+      role: '',
+      organization: '',
+      bio: '',
+      image: '',
+      expertise: [],
+      socialLinks: [],
+    },
+    level: 'Beginner',
+    prerequisites: [],
+    topics: [
+      'Overview of AI Productivity Tools',
+      'Hands-On Demonstrations',
+      'Customization Techniques',
+      'Success Stories',
+    ],
+    learningOutcomes: [],
+    category: 'Session 2',
+    materials: [],
+    capacity: 0,
+    price: '',
+    includes: [],
+  },
+  {
+    id: 'generative-ai-video',
+    title: 'Create Stunning Videos: Generative AI for Visual Content',
+    description: 'Understand how AI can be used to create and edit videos.',
+    longDescription: `What to Expect:
+- Introduction to Generative AI: Understand how AI can be used to create and edit videos.
+- Tool Exploration: Learn to use platforms like ComfyUI for video generation.
+- Creative Techniques: Discover how to craft engaging visual content with AI assistance.
+- Practical Application: Produce your own AI-generated video during the workshop.
+
+Why Should You Attend?
+- Enhance Creativity: Leverage AI to bring your creative ideas to life without extensive technical skills.
+- Expand Your Skillset: Add AI-driven video production to your professional toolkit.
+- Engage Audiences: Learn to create compelling content that captivates viewers.`,
+    duration: '',
+    date: '',
+    time: '',
+    location: '',
+    instructor: {
+      id: '',
+      name: '',
+      role: '',
+      organization: '',
+      bio: '',
+      image: '',
+      expertise: [],
+      socialLinks: [],
+    },
+    level: 'Beginner',
+    prerequisites: [],
+    topics: [
+      'Introduction to Generative AI',
+      'Tool Exploration',
+      'Creative Techniques',
+      'Practical Application',
+    ],
+    learningOutcomes: [],
+    category: 'Session 2',
+    materials: [],
+    capacity: 0,
+    price: '',
+    includes: [],
+  },
+  // Intermediate Workshops
+  {
+    id: 'gen-ai-development',
+    title: 'Gen AI & Agents in Action: From Concepts to Code for Senior Developers',
+    description:
+      'Gain a deep understanding of generative AI technologies and the role of AI agents in modern software development.',
+    longDescription: `What to Expect:
+- Comprehensive Overview of Generative AI and Agents: Gain a deep understanding of generative AI technologies and the role of AI agents in modern software development.
+- Hands-On Coding Sessions: Engage in practical exercises to implement AI agents, utilizing frameworks such as LangChain and tools like Hugging Face. 
+- Integration Techniques: Learn methods to seamlessly incorporate generative AI models into existing software systems, enhancing functionality and user experience.
+
+Why Should You Attend?
+- Enhance Your Skill Set: Stay ahead in the rapidly evolving tech landscape by mastering generative AI and agent-based systems, skills that are increasingly in demand.
+- Practical Application: Apply theoretical knowledge through hands-on coding, enabling you to build and deploy AI-driven solutions in real-world scenarios.
+- Career Advancement: Position yourself as a leader in AI integration within your organization, opening opportunities for career growth and innovation.`,
+    duration: '',
+    date: '',
+    time: '',
+    location: '',
+    instructor: {
+      id: '',
+      name: '',
+      role: '',
+      organization: '',
+      bio: '',
+      image: '',
+      expertise: [],
+      socialLinks: [],
     },
     level: 'Intermediate',
-    prerequisites: [
-      'Understanding of AI basics',
-      'Interest in ethics',
-      'Basic programming knowledge',
-    ],
+    prerequisites: [],
     topics: [
-      'Moral framework implementation',
-      'Boundary setting techniques',
-      'Value alignment',
-      'Safety protocols',
-      'Bias detection and mitigation',
-      'Ethical decision making',
+      'Comprehensive Overview of Generative AI and Agents',
+      'Hands-On Coding Sessions',
+      'Integration Techniques',
     ],
-    learningOutcomes: [
-      'Implement ethical guidelines in AI systems',
-      'Design effective boundary conditions',
-      'Create value-aligned AI behaviors',
-      'Develop ethical testing frameworks',
-      'Address bias in AI systems',
-    ],
-    category: 'AI Ethics',
-    materials: [
-      'Ethics framework toolkit',
-      'Implementation guides',
-      'Case study collection',
-      'Assessment templates',
-    ],
-    capacity: 40,
-    price: '₹12,000',
-    includes: [
-      'Workshop materials',
-      'Ethics toolkit',
-      'Breakfast and refreshments',
-      'Certificate of completion',
-    ],
+    learningOutcomes: [],
+    category: 'Session 2',
+    materials: [],
+    capacity: 0,
+    price: '',
+    includes: [],
   },
-  // Add more workshops here...
+  {
+    id: 'ai-observability',
+    title: 'Keeping an Eye on AI: Ensuring System Observability',
+    description: 'Learn why monitoring AI systems is crucial for performance and reliability.',
+    longDescription: `What to Expect:
+- Importance of Observability: Learn why monitoring AI systems is crucial for performance and reliability.
+- Tools and Techniques: Explore various methods to achieve observability in AI applications.
+- Troubleshooting and Debugging: Develop skills to identify and resolve issues in AI systems.
+- Real-World Scenarios: Examine case studies highlighting the importance of AI observability.
+
+Why Should You Attend?
+- Ensure Reliability: Learn to maintain the health and performance of AI systems.
+- Proactive Problem-Solving: Develop the ability to detect and address issues before they escalate.
+- Build Trust: Ensure AI systems operate transparently and effectively, fostering user confidence.`,
+    duration: '',
+    date: '',
+    time: '',
+    location: '',
+    instructor: {
+      id: '',
+      name: '',
+      role: '',
+      organization: '',
+      bio: '',
+      image: '',
+      expertise: [],
+      socialLinks: [],
+    },
+    level: 'Intermediate',
+    prerequisites: [],
+    topics: [
+      'Importance of Observability',
+      'Tools and Techniques',
+      'Troubleshooting and Debugging',
+      'Real-World Scenarios',
+    ],
+    learningOutcomes: [],
+    category: 'Session 2',
+    materials: [],
+    capacity: 0,
+    price: '',
+    includes: [],
+  },
+  // Advanced Workshop
+  {
+    id: 'multimodal-llm',
+    title:
+      'Bridging Text, Vision, and Data: Extracting Knowledge from Complex Documents Using Multi-Modal LLMs',
+    description: 'Understand the integration of visual and textual data in AI models.',
+    longDescription: `What to Expect:
+- Introduction to Vision-Language Models (VLMs): Understand the integration of visual and textual data in AI models.
+- Advanced Document Processing Techniques: Learn how VLMs can enhance document analysis and information extraction.
+- Hands-On Implementation: Develop and deploy VLM-based solutions for complex document processing tasks.
+- Case Studies: Examine real-world applications of VLMs in various industries.
+
+Why Should You Attend?
+- Stay at the Cutting Edge: Engage with the latest advancements in AI technology.
+- Enhance Analytical Capabilities: Learn to process and interpret complex documents more efficiently.
+- Career Growth: Position yourself as an expert in emerging AI applications.`,
+    duration: '',
+    date: '',
+    time: '',
+    location: '',
+    instructor: {
+      id: '',
+      name: '',
+      role: '',
+      organization: '',
+      bio: '',
+      image: '',
+      expertise: [],
+      socialLinks: [],
+    },
+    level: 'Advanced',
+    prerequisites: [],
+    topics: [
+      'Introduction to Vision-Language Models',
+      'Advanced Document Processing Techniques',
+      'Hands-On Implementation',
+      'Case Studies',
+    ],
+    learningOutcomes: [],
+    category: 'Session 2',
+    materials: [],
+    capacity: 0,
+    price: '',
+    includes: [],
+  },
 ];
