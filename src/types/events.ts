@@ -109,3 +109,13 @@ export type AgendaDay = {
   date: string;
   events: Event[];
 };
+
+export type AdvisorsData = {
+  id: string;
+  name: string;
+  role: string;
+  organization: string;
+  bio: string;
+  image: string;
+  socialLinks: SocialLink[];
+};
