@@ -42,7 +42,7 @@ const EventRegistrationButton: React.FC<EventRegistrationButtonProps> = ({
             Express Interest
           </button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px] h-screen md:h-auto bg-gray-900 border-gray-800 overflow-y-scroll">
+        <DialogContent className="max-w-lg mx-auto overflow-y-auto max-h-[80vh] px-4">
           <VisuallyHidden>
             <DialogTitle>Participant Interest Form</DialogTitle>
           </VisuallyHidden>
