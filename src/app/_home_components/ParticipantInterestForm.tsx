@@ -86,151 +86,141 @@ export function ParticipantInterestForm() {
   }
 
   return (
-    <div className="max-w-lg mx-auto">
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-        <div>
-          <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-1">
-            Full Name (Required)
-          </label>
-          <input
-            {...register('fullName')}
-            id="fullName"
-            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
-          />
-          {errors.fullName && (
-            <p className="mt-1 text-sm text-red-500">{errors.fullName.message}</p>
-          )}
-        </div>
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <div>
+        <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-1">
+          Full Name (Required)
+        </label>
+        <input
+          {...register('fullName')}
+          id="fullName"
+          className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
+        />
+        {errors.fullName && <p className="mt-1 text-sm text-red-500">{errors.fullName.message}</p>}
+      </div>
 
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
-            Email Address (Required)
-          </label>
-          <input
-            {...register('email')}
-            id="email"
-            type="email"
-            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
-          />
-          {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
-          <p className="mt-1 text-xs text-gray-400">For updates and registration details</p>
-        </div>
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+          Email Address (Required)
+        </label>
+        <input
+          {...register('email')}
+          id="email"
+          type="email"
+          className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
+        />
+        {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
+        <p className="mt-1 text-xs text-gray-400">For updates and registration details</p>
+      </div>
 
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
-            Phone Number (Required)
-          </label>
-          <input
-            {...register('phone')}
-            id="phone"
-            type="tel"
-            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
-          />
-          {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>}
-        </div>
+      <div>
+        <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
+          Phone Number (Required)
+        </label>
+        <input
+          {...register('phone')}
+          id="phone"
+          type="tel"
+          className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
+        />
+        {errors.phone && <p className="mt-1 text-sm text-red-500">{errors.phone.message}</p>}
+      </div>
 
-        <div>
-          <fieldset>
-            <legend className="block text-sm font-medium text-gray-300 mb-1">
-              What interests you the most about the conference? (Select one or more)
-            </legend>
-            {[
-              'Keynote Speakers',
-              'Networking Opportunities',
-              'Workshops/Hands-on Sessions',
-              'AI Trends and Innovations',
-              'Career Insights',
-              'Other',
-            ].map(interest => (
-              <div key={interest} className="flex items-center mt-2">
-                <input
-                  {...register('interests')}
-                  id={`interest-${interest}`}
-                  type="checkbox"
-                  value={interest}
-                  className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-700 rounded"
-                />
-                <label
-                  htmlFor={`interest-${interest}`}
-                  className="ml-2 block text-sm text-gray-300"
-                >
-                  {interest}
-                </label>
-              </div>
-            ))}
-          </fieldset>
-          {errors.interests && (
-            <p className="mt-1 text-sm text-red-500">{errors.interests.message}</p>
-          )}
-        </div>
-
-        <AnimatePresence>
-          {interests && interests.includes('Other') && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <label
-                htmlFor="otherInterest"
-                className="block text-sm font-medium text-gray-300 mb-1"
-              >
-                Please specify other interest
-              </label>
+      <div>
+        <fieldset>
+          <legend className="block text-sm font-medium text-gray-300 mb-1">
+            What interests you the most about the conference? (Select one or more)
+          </legend>
+          {[
+            'Keynote Speakers',
+            'Networking Opportunities',
+            'Workshops/Hands-on Sessions',
+            'AI Trends and Innovations',
+            'Career Insights',
+            'Other',
+          ].map(interest => (
+            <div key={interest} className="flex items-center mt-2">
               <input
-                {...register('otherInterest')}
-                id="otherInterest"
-                className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
+                {...register('interests')}
+                id={`interest-${interest}`}
+                type="checkbox"
+                value={interest}
+                className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-700 rounded"
               />
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <label htmlFor={`interest-${interest}`} className="ml-2 block text-sm text-gray-300">
+                {interest}
+              </label>
+            </div>
+          ))}
+        </fieldset>
+        {errors.interests && (
+          <p className="mt-1 text-sm text-red-500">{errors.interests.message}</p>
+        )}
+      </div>
 
-        <div className="flex items-center mb-4">
-          <input
-            {...register('isStudent')}
-            id="isStudent"
-            type="checkbox"
-            className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-700 rounded"
-          />
-          <label htmlFor="isStudent" className="ml-2 block text-sm text-gray-300">
-            I am a student
-          </label>
-        </div>
+      <AnimatePresence>
+        {interests && interests.includes('Other') && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <label htmlFor="otherInterest" className="block text-sm font-medium text-gray-300 mb-1">
+              Please specify other interest
+            </label>
+            <input
+              {...register('otherInterest')}
+              id="otherInterest"
+              className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-        <div>
-          <label htmlFor="designation" className="block text-sm font-medium text-gray-300 mb-1">
-            {isStudent ? 'Course/Major (Optional)' : 'Designation (Optional)'}
-          </label>
-          <input
-            {...register('designation')}
-            id="designation"
-            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
-          />
-        </div>
+      <div className="flex items-center mb-4">
+        <input
+          {...register('isStudent')}
+          id="isStudent"
+          type="checkbox"
+          className="h-4 w-4 text-yellow-500 focus:ring-yellow-500 border-gray-700 rounded"
+        />
+        <label htmlFor="isStudent" className="ml-2 block text-sm text-gray-300">
+          I am a student
+        </label>
+      </div>
 
-        <div>
-          <label htmlFor="organization" className="block text-sm font-medium text-gray-300 mb-1">
-            {isStudent ? 'Institution (Optional)' : 'Organization (Optional)'}
-          </label>
-          <input
-            {...register('organization')}
-            id="organization"
-            className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
-          />
-          <p className="mt-1 text-xs text-gray-400">Helps us understand your background</p>
-        </div>
+      <div>
+        <label htmlFor="designation" className="block text-sm font-medium text-gray-300 mb-1">
+          {isStudent ? 'Course/Major (Optional)' : 'Designation (Optional)'}
+        </label>
+        <input
+          {...register('designation')}
+          id="designation"
+          className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
+        />
+      </div>
 
-        <button
-          type="submit"
-          className="w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-white font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300"
-        >
-          Submit
-        </button>
+      <div>
+        <label htmlFor="organization" className="block text-sm font-medium text-gray-300 mb-1">
+          {isStudent ? 'Institution (Optional)' : 'Organization (Optional)'}
+        </label>
+        <input
+          {...register('organization')}
+          id="organization"
+          className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-md text-white"
+        />
+        <p className="mt-1 text-xs text-gray-400">Helps us understand your background</p>
+      </div>
 
-        {error && <p className="mt-4 text-center text-red-500">{error}</p>}
-      </form>
-    </div>
+      <button
+        type="submit"
+        className="w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-white font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300"
+      >
+        Submit
+      </button>
+
+      {error && <p className="mt-4 text-center text-red-500">{error}</p>}
+    </form>
   );
 }
