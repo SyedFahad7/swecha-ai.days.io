@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import EventRegistrationButton from './EventRegistrationButton';
+import Image from 'next/image';
 
 export default function Navbar({ navItems }: { navItems: { name: string; path: string }[] }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function Navbar({ navItems }: { navItems: { name: string; path: s
             href="/"
             className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 hover:from-purple-300 hover:to-cyan-300 transition-all duration-300"
           >
-            AI Days 2025
+            <Image src="/images/logo-sm.svg" alt="AI Days 2025" width={200} height={54} />
           </Link>
           <div className="hidden xl:flex items-center space-x-8">
             {navItems.map(item => (
