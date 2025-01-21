@@ -2,7 +2,6 @@ import Link from 'next/link';
 import EventRegistrationButton from '@/components/EventRegistrationButton';
 import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from '@/featureFlags';
 import SponsorsSection from './_home_components/SponsorsSection';
-import Image from 'next/image';
 import SpeakersCarousel from './_home_components/SpeakersCarousel';
 
 export default async function Home({
@@ -41,22 +40,14 @@ export default async function Home({
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="inline-block px-6 py-2 mb-6 rounded-full border-2 border-yellow-500 text-yellow-500 text-lg md:text-xl font-semibold hover:bg-yellow-500/10 transition-all duration-300">
+            April 12-13, 2025
+          </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
+            Shaping the Future of AI in India
+          </h1>
           <p className="text-lg md:text-xl mb-4 text-purple-300 font-medium tracking-wider">
             India&#39;s Largest AI Conference
-          </p>
-          <Image
-            src="/images/logo.svg"
-            alt="AI Days Logo"
-            height={128}
-            width={652}
-            className="h-32 w-auto md:my-6 lg:my-12 "
-          />
-          <div className="flex items-center justify-center space-x-2 text-xl md:text-2xl mb-8">
-            <span className="text-purple-300">📆</span>
-            <span className="text-cyan-300">Announcing Soon</span>
-          </div>
-          <p className="text-xl md:text-2xl mb-12 text-gray-300">
-            Shaping the Future of AI in India
           </p>
 
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
