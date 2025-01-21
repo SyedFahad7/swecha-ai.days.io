@@ -71,7 +71,6 @@ export default function SpeakersCarousel() {
 
   const handleScroll = (e: React.WheelEvent) => {
     if (containerRef.current) {
-      e.preventDefault();
       containerRef.current.scrollLeft += e.deltaY;
     }
   };
@@ -88,10 +87,11 @@ export default function SpeakersCarousel() {
 
   const handleDragMove = (e: React.TouchEvent | React.MouseEvent) => {
     if (!isDragging) return;
-    e.preventDefault();
     const x = 'touches' in e ? e.touches[0].pageX : e.pageX;
     const walk = (x - startX) * 2;
-    containerRef.current!.scrollLeft = scrollLeft - walk;
+    if (containerRef.current) {
+      containerRef.current.scrollLeft = scrollLeft - walk;
+    }
   };
 
   return (
@@ -115,7 +115,7 @@ export default function SpeakersCarousel() {
         <motion.div
           key={`${speaker.name}-${index}`}
           className="w-full sm:w-1/3 lg:w-1/4 flex-shrink-0 px-4"
-          style={{ touchAction: 'none' }}
+          style={{ touchAction: 'pan-y' }}
         >
           <SpeakerCard speaker={speaker} hideDescription={true} />
         </motion.div>
