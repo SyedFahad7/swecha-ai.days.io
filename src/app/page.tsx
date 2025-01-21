@@ -56,7 +56,7 @@ export default async function Home({
             {[
               { number: '02', label: 'Days' },
               { number: '60+', label: 'Speakers' },
-              { number: '2000+', label: 'Delegates' },
+              // { number: '2000+', label: 'Delegates' },
               { number: '20+', label: 'Workshops' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
