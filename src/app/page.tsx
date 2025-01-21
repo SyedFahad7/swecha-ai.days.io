@@ -3,6 +3,7 @@ import EventRegistrationButton from '@/components/EventRegistrationButton';
 import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from '@/featureFlags';
 import SponsorsSection from './_home_components/SponsorsSection';
 import SpeakersCarousel from './_home_components/SpeakersCarousel';
+import { config } from '@/config';
 
 export default async function Home({
   searchParams,
@@ -16,6 +17,7 @@ export default async function Home({
     isBecomeASponsorEnabled(),
   ]);
 
+  const conferenceDates = config.CONFERENCE_DAYS.datesLabel;
   const displayInterestForm = (await searchParams)['display-interest-form'] === '1';
   return (
     <main className="min-h-screen bg-black text-white">
@@ -41,7 +43,7 @@ export default async function Home({
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="inline-block px-6 py-2 mb-6 rounded-full border-2 border-yellow-500 text-yellow-500 text-lg md:text-xl font-semibold hover:bg-yellow-500/10 transition-all duration-300">
-            April 12-13, 2025
+            {conferenceDates}
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
             Shaping the Future of AI in India
