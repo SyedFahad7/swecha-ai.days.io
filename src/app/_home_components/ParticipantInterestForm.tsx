@@ -215,7 +215,7 @@ export function ParticipantInterestForm() {
 
       <button
         type="submit"
-        className="w-full px-4 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-white font-semibold hover:from-purple-500 hover:to-cyan-500 transition-all duration-300"
+        className="w-full px-4 py-2 bg-gradient-to-br from-yellow-900/20 to-yellow-900/5 rounded-2xl border border-yellow-500/20 inline-flex items-center justify-center font-semibold text-purple-200 hover:from-yellow-900/30 hover:to-yellow-900/10 transition-all duration-300"
       >
         Submit
       </button>

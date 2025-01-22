@@ -2,19 +2,20 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import EventRegistrationButton from './EventRegistrationButton';
+import Image from 'next/image';
 
 export default function Navbar({ navItems }: { navItems: { name: string; path: string }[] }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-purple-900/20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-between h-16">
           <Link
             href="/"
             className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 hover:from-purple-300 hover:to-cyan-300 transition-all duration-300"
           >
-            AI Days 2025
+            <Image src="/images/logo-sm.svg" alt="AI Days 2025" width={200} height={54} />
           </Link>
           <div className="hidden xl:flex items-center space-x-8">
             {navItems.map(item => (
