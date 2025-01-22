@@ -2,7 +2,13 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
-import { isAgendaEnabled, isSponsorsPageEnabled, isWorkshopsEnabled } from '@/featureFlags';
+import {
+  isAgendaEnabled,
+  isSponsorsPageEnabled,
+  isWorkshopsEnabled,
+  isAboutUsEnabled,
+  isTimelineEnabled,
+} from '@/featureFlags';
 import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -68,16 +74,23 @@ export const metadata: Metadata = {
 };
 
 const getNavItems = async () => {
-  const [agendaEnabled, workshopsEnabled, sponsorsEnabled] = await Promise.all([
-    isAgendaEnabled(),
-    isWorkshopsEnabled(),
-    isSponsorsPageEnabled(),
-  ]);
+  const [agendaEnabled, workshopsEnabled, sponsorsEnabled, aboutUsEnabled, timelineEnabled] =
+    await Promise.all([
+      isAgendaEnabled(),
+      isWorkshopsEnabled(),
+      isSponsorsPageEnabled(),
+      isAboutUsEnabled(),
+      isTimelineEnabled(),
+    ]);
 
   let navItems = [
     { name: 'Home', path: '/' },
     { name: 'Speakers', path: '/speakers' },
   ];
+
+  if (aboutUsEnabled) {
+    navItems = [...navItems, { name: 'About', path: '/about' }];
+  }
 
   if (agendaEnabled) {
     navItems = [...navItems, { name: 'Agenda', path: '/agenda' }];
@@ -91,6 +104,10 @@ const getNavItems = async () => {
 
   if (sponsorsEnabled) {
     navItems = [...navItems, { name: 'Sponsors', path: '/sponsors' }];
+  }
+
+  if (timelineEnabled) {
+    navItems = [...navItems, { name: 'Timeline', path: '/timeline' }];
   }
 
   return navItems;

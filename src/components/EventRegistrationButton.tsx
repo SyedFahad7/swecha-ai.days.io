@@ -20,7 +20,7 @@ const EventRegistrationButton: React.FC<EventRegistrationButtonProps> = ({
       <a
         href={config.REGISTRATION_LINK}
         className={cn(
-          'inline-block text-center md:px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg shadow-purple-500/25 hover:from-purple-500 hover:to-cyan-500 hover:shadow-cyan-500/25',
+          'inline-flex items-center text-center px-4 sm:px-6 lg:px-8 py-4 bg-gradient-to-br from-purple-900/20 to-purple-900/5 rounded-2xl border border-purple-500/20 text-xl font-semibold text-purple-200 transition-all duration-300 shadow-lg shadow-purple-500/25 hover:from-purple-800/20 hover:to-purple-800/5 hover:shadow-cyan-500/25',
           className
         )}
       >
@@ -35,14 +35,14 @@ const EventRegistrationButton: React.FC<EventRegistrationButtonProps> = ({
         <DialogTrigger asChild>
           <button
             className={cn(
-              'inline-block text-center md:px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg shadow-purple-500/25 hover:from-purple-500 hover:to-cyan-500 hover:shadow-cyan-500/25',
+              'inline-flex items-center text-center px-4 sm:px-6 lg:px-8 py-4 bg-gradient-to-br from-yellow-900/20 to-yellow-900/5 rounded-2xl border border-yellow-500/20 text-xl font-semibold text-yellow-200 transition-all duration-300 shadow-lg shadow-yellow-500/25 hover:from-yellow-800/20 hover:to-yellow-800/5 hover:shadow-cyan-500/25',
               className
             )}
           >
             Express Interest
           </button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px] h-screen md:h-auto bg-gray-900 border-gray-800 overflow-y-scroll">
+        <DialogContent className="max-w-lg mx-auto overflow-y-auto max-h-[80vh] px-4 bg-gradient-to-br from-purple-900/20 to-purple-900/5 rounded-2xl border border-purple-500/20">
           <VisuallyHidden>
             <DialogTitle>Participant Interest Form</DialogTitle>
           </VisuallyHidden>
@@ -55,7 +55,7 @@ const EventRegistrationButton: React.FC<EventRegistrationButtonProps> = ({
   return (
     <button
       className={cn(
-        'inline-block text-center md:px-8 py-4 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full text-lg font-semibold cursor-not-allowed',
+        'inline-flex items-center text-center px-4 sm:px-6 lg:px-8 py-4 bg-gradient-to-br from-gray-900/20 to-gray-900/5 rounded-2xl border border-gray-500/20 text-xl font-semibold text-gray-300 cursor-not-allowed',
         className
       )}
       disabled

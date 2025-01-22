@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { workshopsData } from '@/data/workshops';
 import Image from 'next/image';
+import MainHeading from '@/components/ui/MainHeading';
 
 export default function WorkshopsPage() {
   return (
@@ -19,16 +20,12 @@ export default function WorkshopsPage() {
 
       {/* Content */}
       <div className="relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold my-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
-              Workshops
-            </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Join our hands-on workshops to learn new skills, collaborate with peers, and get
-              practical experience with cutting-edge technologies.
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12">
+          <MainHeading
+            title="Workshops"
+            subtitle="Join our hands-on workshops to learn new skills, collaborate with peers, and get
+              practical experience with cutting-edge technologies."
+          />
 
           {/* Workshop Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

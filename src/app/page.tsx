@@ -2,8 +2,11 @@ import Link from 'next/link';
 import EventRegistrationButton from '@/components/EventRegistrationButton';
 import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from '@/featureFlags';
 import SponsorsSection from './_home_components/SponsorsSection';
-import Image from 'next/image';
 import SpeakersCarousel from './_home_components/SpeakersCarousel';
+import { config } from '@/config';
+import dynamic from 'next/dynamic';
+
+const CountdownTimer = dynamic(() => import('@/components/CountdownTimer'), { ssr: true });
 
 export default async function Home({
   searchParams,
@@ -17,6 +20,7 @@ export default async function Home({
     isBecomeASponsorEnabled(),
   ]);
 
+  const conferenceDates = config.CONFERENCE_DAYS.datesLabel;
   const displayInterestForm = (await searchParams)['display-interest-form'] === '1';
   return (
     <main className="min-h-screen bg-black text-white">
@@ -33,7 +37,7 @@ export default async function Home({
       </div>
 
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-20">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
@@ -41,29 +45,41 @@ export default async function Home({
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+          <div className="inline-block px-6 py-2 mb-6 rounded-full border-2 border-yellow-500 text-yellow-500 text-lg md:text-xl font-semibold hover:bg-yellow-500/10 transition-all duration-300">
+            {conferenceDates}
+          </div>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
+            Shaping the Future of AI in India
+          </h1>
           <p className="text-lg md:text-xl mb-4 text-purple-300 font-medium tracking-wider">
             India&#39;s Largest AI Conference
           </p>
-          <Image
-            src="/images/logo.svg"
-            alt="AI Days Logo"
-            height={128}
-            width={652}
-            className="h-32 w-auto md:my-6 lg:my-12 "
-          />
-          <div className="flex items-center justify-center space-x-2 text-xl md:text-2xl mb-8">
-            <span className="text-purple-300">📆</span>
-            <span className="text-cyan-300">Announcing Soon</span>
-          </div>
-          <p className="text-xl md:text-2xl mb-12 text-gray-300">
-            Shaping the Future of AI in India
-          </p>
+          <Link
+            href="https://2024.aidays.io"
+            target="_blank"
+            className="px-6 py-3 text-base font-medium text-purple-300 hover:text-purple-200 transition-all duration-300 flex items-center justify-center"
+          >
+            View 2024 Highlights
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline-block w-5 h-5 ml-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </Link>
 
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12 py-3">
             {[
               { number: '02', label: 'Days' },
               { number: '60+', label: 'Speakers' },
-              { number: '2000+', label: 'Delegates' },
               { number: '20+', label: 'Workshops' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
@@ -77,30 +93,9 @@ export default async function Home({
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <EventRegistrationButton
-              className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
+              className="px-6 py-3 border block border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
               openInterestFromByDefault={displayInterestForm}
             />
-            <Link
-              href="https://2024.aidays.io"
-              target="_blank"
-              className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
-            >
-              2024 Highlights
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="inline-block w-5 h-5 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </Link>
           </div>
         </div>
       </div>
@@ -168,6 +163,9 @@ export default async function Home({
 
       {/* Sponsors Section */}
       <SponsorsSection showSponsorsPage={showSponsorsPage} showBecomeSponsor={showBecomeSponsor} />
+      <div className="relative z-10">
+        <CountdownTimer />
+      </div>
     </main>
   );
 }

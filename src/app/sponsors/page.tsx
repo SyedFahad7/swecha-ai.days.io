@@ -1,6 +1,7 @@
 import { sponsorsData } from '@/data/sponsors';
 import Link from 'next/link';
 import Image from 'next/image';
+import MainHeading from '@/components/ui/MainHeading';
 
 export default function SponsorsPage() {
   const platinumSponsors = sponsorsData.filter(s => s.tier === 'platinum');
@@ -24,17 +25,10 @@ export default function SponsorsPage() {
       {/* Content */}
       <div className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="relative max-w-7xl mx-auto mb-24">
-          <div className="absolute -top-8 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-transparent via-yellow-500/50 to-purple-500/50" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 border border-yellow-500/50" />
-
-          <h1 className="text-center text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
-            Our Sponsors
-          </h1>
-          <p className="text-center text-xl text-yellow-100/60 max-w-3xl mx-auto">
-            Leading organizations shaping the future of AI technology and research
-          </p>
-        </div>
+        <MainHeading
+          title="Our Sponsors"
+          subtitle="Leading organizations shaping the future of AI technology and research"
+        />
 
         {/* Platinum Sponsors */}
         <section className="max-w-7xl mx-auto mb-24">
