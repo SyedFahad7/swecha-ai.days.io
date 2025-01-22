@@ -37,7 +37,7 @@ export default async function Home({
       </div>
 
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-20">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
@@ -54,12 +54,32 @@ export default async function Home({
           <p className="text-lg md:text-xl mb-4 text-purple-300 font-medium tracking-wider">
             India&#39;s Largest AI Conference
           </p>
+          <Link
+            href="https://2024.aidays.io"
+            target="_blank"
+            className="px-6 py-3 text-base font-medium text-purple-300 hover:text-purple-200 transition-all duration-300 flex items-center justify-center"
+          >
+            View 2024 Highlights
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="inline-block w-5 h-5 ml-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          </Link>
 
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
+          <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12 py-3">
             {[
               { number: '02', label: 'Days' },
               { number: '60+', label: 'Speakers' },
-              // { number: '2000+', label: 'Delegates' },
               { number: '20+', label: 'Workshops' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
@@ -73,30 +93,9 @@ export default async function Home({
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <EventRegistrationButton
-              className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
+              className="px-6 py-3 border block border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
               openInterestFromByDefault={displayInterestForm}
             />
-            <Link
-              href="https://2024.aidays.io"
-              target="_blank"
-              className="px-6 py-3 border border-purple-500 rounded-full text-base md:text-lg font-semibold hover:bg-purple-500/10 transition-all duration-300"
-            >
-              2024 Highlights
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="inline-block w-5 h-5 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </Link>
           </div>
         </div>
       </div>
