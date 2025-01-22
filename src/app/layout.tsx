@@ -74,13 +74,14 @@ export const metadata: Metadata = {
 };
 
 const getNavItems = async () => {
-  const [agendaEnabled, workshopsEnabled, sponsorsEnabled, aboutUsEnabled, timelineEnabled] = await Promise.all([
-    isAgendaEnabled(),
-    isWorkshopsEnabled(),
-    isSponsorsPageEnabled(),
-    isAboutUsEnabled(),
-    isTimelineEnabled(),
-  ]);
+  const [agendaEnabled, workshopsEnabled, sponsorsEnabled, aboutUsEnabled, timelineEnabled] =
+    await Promise.all([
+      isAgendaEnabled(),
+      isWorkshopsEnabled(),
+      isSponsorsPageEnabled(),
+      isAboutUsEnabled(),
+      isTimelineEnabled(),
+    ]);
 
   let navItems = [
     { name: 'Home', path: '/' },
@@ -88,7 +89,7 @@ const getNavItems = async () => {
   ];
 
   if (aboutUsEnabled) {
-    navItems = [...navItems, { name: 'About us', path: '/aboutus' }];
+    navItems = [...navItems, { name: 'About', path: '/about' }];
   }
 
   if (agendaEnabled) {
