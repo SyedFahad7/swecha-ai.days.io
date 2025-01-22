@@ -13,6 +13,7 @@ export const isWorkshopsEnabled = createFlag('workshops', 'WORKSHOPS_ENABLED');
 export const isSponsorsPageEnabled = createFlag('sponsors', 'SPONSORS_ENABLED');
 export const isBecomeASponsorEnabled = createFlag('sponsor-us', 'BECOME_SPONSOR_ENABLED');
 export const isAboutUsEnabled = createFlag('about-us', 'ABOUT_US_ENABLED');
+export const isTimelineEnabled = createFlag('timeline', 'TIMELINE_ENABLED');
 
 export const middleWareFlags = [
   isAgendaEnabled,
@@ -20,6 +21,7 @@ export const middleWareFlags = [
   isSponsorsPageEnabled,
   isBecomeASponsorEnabled,
   isAboutUsEnabled,
+  isTimelineEnabled,
 ];
 
 // We use flag so that we don't show in progress pages on production.

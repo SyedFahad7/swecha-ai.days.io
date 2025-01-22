@@ -3,6 +3,7 @@ import type { NextRequest } from 'next/server';
 import {
   isAgendaEnabled,
   isSponsorsPageEnabled,
+  isTimelineEnabled,
   isWorkshopsEnabled,
   middleWareFlags,
 } from './featureFlags';
@@ -30,6 +31,14 @@ export async function middleware(request: NextRequest) {
 
   if (pathName.startsWith('/sponsors')) {
     if (!(await isSponsorsPageEnabled(code, middleWareFlags))) {
+      return NextResponse.redirect(new URL('/', request.url), {
+        status: 307,
+      });
+    }
+  }
+
+  if (pathName.startsWith('/timeline')) {
+    if (!(await isTimelineEnabled(code, middleWareFlags))) {
       return NextResponse.redirect(new URL('/', request.url), {
         status: 307,
       });
