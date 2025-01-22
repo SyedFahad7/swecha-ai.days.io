@@ -10,7 +10,7 @@ export default function AboutUs() {
   return (
     <main className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <section className="max-w-7xl mx-auto my-16">
-        <MainHeading title="About" className="text-4xl font-bold text-yellow-200" />
+        <MainHeading title="About" />
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">

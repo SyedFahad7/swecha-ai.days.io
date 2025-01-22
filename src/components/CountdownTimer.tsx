@@ -5,26 +5,33 @@ import Link from 'next/link';
 import EventRegistrationButton from './EventRegistrationButton';
 import { config } from '@/config';
 
-const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState({
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+const CountdownTimer: React.FC = () => {
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
     minutes: 0,
     seconds: 0,
   });
-  const [eventStarted, setEventStarted] = useState(false);
+  const [eventStarted, setEventStarted] = useState<boolean>(false);
 
   useEffect(() => {
-    const calculateTimeLeft = () => {
-      const startDate = new Date(config.CONFERENCE_DAYS.day1);
-      const now = new Date();
-      const difference = startDate.getTime() - now.getTime();
+    const calculateTimeLeft = (): void => {
+      const startDate: Date = new Date(config.CONFERENCE_DAYS.day1);
+      const now: Date = new Date();
+      const difference: number = startDate.getTime() - now.getTime();
 
       if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((difference / 1000 / 60) % 60);
-        const seconds = Math.floor((difference / 1000) % 60);
+        const days: number = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours: number = Math.floor((difference / (1000 * 60 * 60)) % 24);
+        const minutes: number = Math.floor((difference / 1000 / 60) % 60);
+        const seconds: number = Math.floor((difference / 1000) % 60);
 
         setTimeLeft({ days, hours, minutes, seconds });
       } else {
@@ -33,17 +40,20 @@ const CountdownTimer = () => {
     };
 
     calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
+    const timer: NodeJS.Timeout = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
-  const validUnits = Object.entries(timeLeft).reduce((acc, [unit, value]) => {
-    if (value > 0 || acc.length > 0) {
-      acc.push([unit, value]);
-    }
-    return acc;
-  }, []);
+  const validUnits: [string, number][] = Object.entries(timeLeft).reduce<[string, number][]>(
+    (acc, [unit, value]) => {
+      if (value > 0 || acc.length > 0) {
+        acc.push([unit, value]);
+      }
+      return acc;
+    },
+    []
+  );
 
   if (eventStarted) {
     return (
