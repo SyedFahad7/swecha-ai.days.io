@@ -4,6 +4,9 @@ import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from 
 import SponsorsSection from './_home_components/SponsorsSection';
 import SpeakersCarousel from './_home_components/SpeakersCarousel';
 import { config } from '@/config';
+import dynamic from 'next/dynamic';
+
+const CountdownTimer = dynamic(() => import('@/components/CountdownTimer'), { ssr: true });
 
 export default async function Home({
   searchParams,
@@ -161,6 +164,9 @@ export default async function Home({
 
       {/* Sponsors Section */}
       <SponsorsSection showSponsorsPage={showSponsorsPage} showBecomeSponsor={showBecomeSponsor} />
+      <div className="relative z-10">
+        <CountdownTimer />
+      </div>
     </main>
   );
 }
