@@ -109,7 +109,12 @@ export default function SpeakersCarousel() {
       onTouchStart={handleDragStart}
       onTouchEnd={handleDragEnd}
       onTouchMove={handleDragMove}
-      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', userSelect: 'none' }}
+      style={{
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+        userSelect: 'none',
+        touchAction: 'pan-y',
+      }}
     >
       {displayedSpeakers.map((speaker, index) => (
         <motion.div
