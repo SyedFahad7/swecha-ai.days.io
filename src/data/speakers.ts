@@ -1,5 +1,6 @@
 export const speakers = [
   {
+    id: 'soumith-chintala',
     name: 'Soumith Chintala',
     role: 'AI Fixer, Meta',
     image: '/speakers/Soumith_Chintala.jpg',
@@ -11,6 +12,7 @@ export const speakers = [
     },
   },
   {
+    id: 'srinivasa-raju-chintalapati',
     name: 'Srinivasa Raju Chintalapati',
     role: 'Chairman, iLabs Capital',
     image: '/speakers/SrinivasaRaju_Chintalapati.jpg',
@@ -22,6 +24,7 @@ export const speakers = [
     },
   },
   {
+    id: 'renata-avila',
     name: 'Renata Avila',
     role: 'CEO, Open Knowledge Foundation',
     image: '/speakers/Renata_Avila.jpeg',
@@ -33,6 +36,7 @@ export const speakers = [
     },
   },
   {
+    id: 'rahul-kulkarni',
     name: 'Rahul Kulkarni',
     role: 'Chief Technologist, Samagra ',
     image: '/speakers/Rahul_Kulkarni.jpg',
@@ -44,6 +48,7 @@ export const speakers = [
     },
   },
   {
+    id: 'venkatesh-hariharan',
     name: 'Venkatesh Hariharan',
     role: 'India Representative, Open Invention Network ',
     image: '/speakers/Venkatesh_Hariharan.jpg',
@@ -55,6 +60,7 @@ export const speakers = [
     },
   },
   {
+    id: 'nikhil-pahwa',
     name: 'Nikhil Pahwa',
     role: 'Founder, MediaNama',
     image: '/speakers/Nikhil_Pahwa.jpg',
@@ -66,6 +72,7 @@ export const speakers = [
     },
   },
   {
+    id: 'chaitanya-chokkareddy',
     name: 'Chaitanya Chokkareddy',
     role: 'CTO, Ozontel',
     image: '/speakers/Chaitanya_Chokkareddy.jpg',
@@ -77,6 +84,7 @@ export const speakers = [
     },
   },
   {
+    id: 'ramesh-loganathan',
     name: 'Ramesh Loganathan',
     role: 'Professor Co-innovation/Outreach, IIITH',
     image: '/speakers/Ramesh_Loganathan.jpg',
@@ -88,6 +96,7 @@ export const speakers = [
     },
   },
   {
+    id: 'bhavesh-mishra',
     name: 'Bhavesh Mishra',
     role: 'Deputy Secretary, IT & Electronics Department, Government of Telangana',
     image: '/speakers/Bhavesh_Mishra.jpg',
@@ -99,6 +108,7 @@ export const speakers = [
     },
   },
   {
+    id: 'apar-gupta',
     name: 'Apar Gupta',
     role: 'Co-Founder, Internet Freedom Foundation ',
     image: '/speakers/Apar_Gupta.jpg',
@@ -110,6 +120,7 @@ export const speakers = [
     },
   },
   {
+    id: 'cv-jawahar',
     name: 'CV Jawahar',
     role: 'Professor and Dean (R&D), IIITH ',
     image: '/speakers/CV_Jawahar.jpg',
@@ -121,6 +132,7 @@ export const speakers = [
     },
   },
   {
+    id: 'vijay-rayapati',
     name: 'Vijay Rayapati',
     role: 'CEO, Atomicwork',
     image: '/speakers/Vijay_Rayapati.jpg',
@@ -132,3 +144,11 @@ export const speakers = [
     },
   },
 ];
+
+export const speakerById = speakers.reduce(
+  (map, speaker) => {
+    map[speaker.id] = speaker;
+    return map;
+  },
+  {} as Record<string, (typeof speakers)[number]>
+);
