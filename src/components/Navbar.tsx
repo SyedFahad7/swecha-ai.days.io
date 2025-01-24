@@ -15,7 +15,13 @@ export default function Navbar({ navItems }: { navItems: { name: string; path: s
             href="/"
             className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-cyan-400 hover:from-purple-300 hover:to-cyan-300 transition-all duration-300"
           >
-            <Image src="/images/logo-sm.svg" alt="AI Days 2025" width={200} height={54} />
+            <Image
+              src="/images/logo-sm.svg"
+              alt="AI Days 2025"
+              width={200}
+              height={54}
+              style={{ width: 'auto', height: 'auto' }}
+            />
           </Link>
           <div className="hidden xl:flex items-center space-x-8">
             {navItems.map(item => (
