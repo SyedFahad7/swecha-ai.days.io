@@ -120,14 +120,14 @@ export default async function SpeakerDetailPage({ params }: { params: Promise<{ 
           </div>
         )}
 
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <Link
             href="/register"
             className="inline-block px-8 py-4 border-2 border-yellow-500 rounded-full text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all duration-300 transform hover:scale-105"
           >
             Register Now
           </Link>
-        </div>
+        </div> */}
       </div>
     </main>
   );

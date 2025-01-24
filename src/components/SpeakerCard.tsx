@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface Speaker {
+  id: string;
   name: string;
   role: string;
   topic: string;
@@ -28,7 +29,7 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, hideDescription = fa
       <div className="relative p-8 flex-1 flex flex-col">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent" />
 
-        <div className="mb-8 relative w-full pb-[100%]">
+        <Link href={`/speakers/${speaker.id}`} className="mb-8 relative w-full pb-[100%] block">
           <div className="absolute inset-0 overflow-hidden rounded-lg">
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/10 to-yellow-500/10" />
             <Image
@@ -41,13 +42,15 @@ const SpeakerCard: React.FC<SpeakerCardProps> = ({ speaker, hideDescription = fa
           </div>
           <div className="absolute inset-0 border border-yellow-500/20 rounded-lg" />
           <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/30 to-yellow-500/30 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity blur-sm" />
-        </div>
+        </Link>
 
         <div className="flex-1 flex flex-col justify-between space-y-4">
           <div>
-            <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
-              {speaker.name}
-            </h3>
+            <Link href={`/speakers/${speaker.id}`} className="block">
+              <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
+                {speaker.name}
+              </h3>
+            </Link>
             <p className="text-purple-300/80 font-medium">{speaker.role}</p>
             <p className="text-yellow-100/60 text-sm">{speaker.topic}</p>
           </div>
