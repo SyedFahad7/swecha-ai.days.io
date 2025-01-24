@@ -1,4 +1,18 @@
-export const speakers = [
+type Speaker = {
+  id: string;
+  name: string;
+  role: string;
+  image: string;
+  topic: string;
+  bio: string;
+  social: {
+    twitter: string;
+    linkedin: string;
+  };
+  videoId?: string;
+};
+
+export const speakers: Speaker[] = [
   {
     id: 'soumith-chintala',
     name: 'Soumith Chintala',

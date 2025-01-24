@@ -1,21 +1,22 @@
 import { speakerById } from '@/data/speakers';
 import Image from 'next/image';
 import Link from 'next/link';
+import VideoPlayer from '@/components/VideoPlayer';
 
-export default function SpeakerDetailPage({ params }: { params: { id: string } }) {
-  const speaker = speakerById[params.id];
+export default async function SpeakerDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const speaker = speakerById[id];
 
   if (!speaker) {
     return (
-      <div className="min-h-screen bg-black text-white flex items-center justify-center">
+      <div className="bg-black text-white flex items-center justify-center">
         <p className="text-2xl text-yellow-500">Speaker not found</p>
       </div>
     );
   }
 
   return (
-    <main className="min-h-screen bg-black text-white relative overflow-hidden">
-      {/* Animated Background */}
+    <main className="bg-black text-white relative overflow-hidden">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-yellow-900/20 animate-gradient-xy" />
         <div className="absolute inset-0 opacity-30">
@@ -35,11 +36,10 @@ export default function SpeakerDetailPage({ params }: { params: { id: string } }
         </div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="relative z-10 container pt-32 pb-20 mx-auto">
         <Link
           href="/speakers"
-          className="text-yellow-500 hover:text-yellow-400 mb-12 inline-flex items-center group"
+          className="text-yellow-500 px-2 hover:text-yellow-400 mb-12 inline-flex items-center group"
         >
           <svg
             className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform"
@@ -64,6 +64,7 @@ export default function SpeakerDetailPage({ params }: { params: { id: string } }
               src={speaker.image}
               alt={speaker.name}
               fill
+              sizes="(max-width: 768px) 100vw, 256px"
               className="object-cover rounded-full"
             />
             <div className="absolute inset-0 border-2 border-yellow-500/20 rounded-full animate-pulse" />
@@ -110,12 +111,21 @@ export default function SpeakerDetailPage({ params }: { params: { id: string } }
           </div>
         )}
 
+        {speaker.videoId && (
+          <div className="mb-12 bg-gray-900/50 p-6 rounded-lg backdrop-blur-sm">
+            <h2 className="text-2xl font-semibold mb-4 text-yellow-300">
+              Hear from {speaker.name}
+            </h2>
+            <VideoPlayer videoId={speaker.videoId} />
+          </div>
+        )}
+
         <div className="mt-12 text-center">
           <Link
-            href="/agenda"
+            href="/register"
             className="inline-block px-8 py-4 border-2 border-yellow-500 rounded-full text-yellow-500 hover:bg-yellow-500 hover:text-black transition-all duration-300 transform hover:scale-105"
           >
-            View Full Agenda
+            Register Now
           </Link>
         </div>
       </div>
