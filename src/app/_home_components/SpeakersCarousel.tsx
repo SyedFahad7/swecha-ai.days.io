@@ -114,6 +114,7 @@ export default function SpeakersCarousel() {
         msOverflowStyle: 'none',
         userSelect: 'none',
         touchAction: 'pan-y',
+        WebkitOverflowScrolling: 'touch',
       }}
     >
       {displayedSpeakers.map((speaker, index) => (
