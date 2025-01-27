@@ -48,7 +48,8 @@ const CountdownTimer: React.FC = () => {
   const validUnits: [string, number][] = Object.entries(timeLeft).reduce<[string, number][]>(
     (acc, [unit, value]) => {
       if (value > 0 || acc.length > 0) {
-        acc.push([unit, value]);
+        const unitValue = value === 1 ? unit.slice(0, -1) : unit;
+        acc.push([unitValue, value]);
       }
       return acc;
     },
@@ -83,9 +84,7 @@ const CountdownTimer: React.FC = () => {
             <div className="text-4xl font-bold text-yellow-200">
               {String(value).padStart(2, '0')}
             </div>
-            <div className="text-xl text-gray-300">
-              {label.charAt(0).toUpperCase() + label.slice(1)}
-            </div>
+            <div className="text-xl text-gray-300 capitalize">{label}</div>
           </div>
         ))}
       </div>
