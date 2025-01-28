@@ -3,6 +3,7 @@ import EventRegistrationButton from '@/components/EventRegistrationButton';
 import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from '@/featureFlags';
 import SponsorsSection from './_home_components/SponsorsSection';
 import SpeakersCarousel from './_home_components/SpeakersCarousel';
+import TicketsSection from './_home_components/TicketsSection';
 import { config } from '@/config';
 import dynamic from 'next/dynamic';
 
@@ -112,7 +113,7 @@ export default async function Home({
           <div className="text-center mt-12 relative z-10">
             <Link
               href="/speakers"
-              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300 relative overflow-hidden group"
+              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300 group"
             >
               <span className="relative z-10">View All Speakers</span>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/50 to-yellow-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -120,6 +121,8 @@ export default async function Home({
           </div>
         </div>
       </section>
+
+      <TicketsSection />
 
       {/* Agenda Highlights Section */}
       {showAgenda && (
@@ -160,7 +163,6 @@ export default async function Home({
           </div>
         </section>
       )}
-
       {/* Sponsors Section */}
       <SponsorsSection showSponsorsPage={showSponsorsPage} showBecomeSponsor={showBecomeSponsor} />
       <div className="relative z-10">
