@@ -3,7 +3,10 @@ interface Ticket {
   benefits: string[];
   availableUntil: string;
   price: number;
-  masterClassUrl?: string;
+  links?: {
+    path: string;
+    label: string;
+  }[];
 }
 
 export const tickets: Ticket[] = [
@@ -41,6 +44,11 @@ export const tickets: Ticket[] = [
     ],
     availableUntil: '13th Apr 2025, 11:00 AM IST',
     price: 15000,
-    masterClassUrl: 'https://aidays.io/masterclass',
+    links: [
+      {
+        label: 'View Masterclass',
+        path: '/masterclass',
+      },
+    ],
   },
 ];

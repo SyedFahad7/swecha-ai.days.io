@@ -31,10 +31,11 @@ export default function TicketsSection() {
                         {benefit}
                       </li>
                     ))}
-                    {ticket.masterClassUrl && (
-                      <li className="text-gray-400 leading-relaxed mt-2">
+                    {ticket.links?.map((link, i) => (
+                      <li key={i} className="text-gray-400 leading-relaxed flex items-start">
+                        <span className="inline-block w-1.5 h-1.5 rounded-full bg-yellow-500/30 mt-2 mr-2"></span>
                         <a
-                          href={ticket.masterClassUrl}
+                          href={link.path}
                           className="text-purple-300 hover:text-purple-200 transition-colors duration-300 flex items-center"
                         >
                           <svg
@@ -46,10 +47,10 @@ export default function TicketsSection() {
                             <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
                             <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                           </svg>
-                          View Masterclass
+                          {link.label}
                         </a>
                       </li>
-                    )}
+                    ))}
                   </ul>
                 </div>
 
