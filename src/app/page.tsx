@@ -1,6 +1,11 @@
 import Link from 'next/link';
 import EventRegistrationButton from '@/components/EventRegistrationButton';
-import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from '@/featureFlags';
+import {
+  isAgendaEnabled,
+  isBecomeASponsorEnabled,
+  isSponsorsPageEnabled,
+  isTicketsSectionEnabled,
+} from '@/featureFlags';
 import SponsorsSection from './_home_components/SponsorsSection';
 import SpeakersCarousel from './_home_components/SpeakersCarousel';
 import TicketsSection from './_home_components/TicketsSection';
@@ -14,12 +19,14 @@ export default async function Home({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const [showAgenda, showWorkshops, showSponsorsPage, showBecomeSponsor] = await Promise.all([
-    isAgendaEnabled(),
-    isAgendaEnabled(),
-    isSponsorsPageEnabled(),
-    isBecomeASponsorEnabled(),
-  ]);
+  const [showAgenda, showWorkshops, showSponsorsPage, showBecomeSponsor, showTicketSection] =
+    await Promise.all([
+      isAgendaEnabled(),
+      isAgendaEnabled(),
+      isSponsorsPageEnabled(),
+      isBecomeASponsorEnabled(),
+      isTicketsSectionEnabled(),
+    ]);
 
   const conferenceDates = config.CONFERENCE_DAYS.datesLabel;
   const displayInterestForm = (await searchParams)['display-interest-form'] === '1';
@@ -122,7 +129,7 @@ export default async function Home({
         </div>
       </section>
 
-      <TicketsSection />
+      {showTicketSection && <TicketsSection />}
 
       {/* Agenda Highlights Section */}
       {showAgenda && (

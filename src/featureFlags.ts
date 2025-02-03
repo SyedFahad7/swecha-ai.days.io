@@ -15,6 +15,7 @@ export const isBecomeASponsorEnabled = createFlag('sponsor-us', 'BECOME_SPONSOR_
 export const isAboutUsEnabled = createFlag('about-us', 'ABOUT_US_ENABLED');
 export const isTimelineEnabled = createFlag('timeline', 'TIMELINE_ENABLED');
 
+export const isTicketsSectionEnabled = createFlag('tickets', 'TICKETS_ENABLED');
 export const middleWareFlags = [
   isAgendaEnabled,
   isWorkshopsEnabled,
