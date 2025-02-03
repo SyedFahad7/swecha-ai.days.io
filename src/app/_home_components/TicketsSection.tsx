@@ -11,7 +11,10 @@ export default function TicketsSection() {
           {tickets.map((ticket, index) => (
             <div
               key={index}
-              className="group h-[500px] relative overflow-hidden rounded-lg border border-yellow-900/30 bg-gradient-to-br from-purple-900/10 via-transparent to-yellow-900/10 hover:from-purple-900/20 hover:to-yellow-900/20 transition-colors duration-500"
+              className="group relative overflow-hidden rounded-lg border border-yellow-900/30 bg-gradient-to-br from-purple-900/10 via-transparent to-yellow-900/10 hover:from-purple-900/20 hover:to-yellow-900/20 transition-colors duration-500"
+              style={{
+                minHeight: `${Math.max(ticket.benefits.length * 40 + 200, 300)}px`,
+              }}
             >
               <div className="flex flex-col h-full p-8">
                 {/* Title with gradient effect */}
