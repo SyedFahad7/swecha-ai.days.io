@@ -1,0 +1,77 @@
+Workshop Detail Page Style Guide
+
+Color Scheme:
+- Primary background: Black (#000000)
+- Text colors:
+  - Primary text: White (#FFFFFF)
+  - Accent text: Yellow-200 (#FEF08A) for headings
+  - Secondary text: Gray-300 (#D1D5DB) for descriptions
+- Accent colors:
+  - Yellow gradient: from yellow-200 to yellow-400 for interactive elements
+  - Purple accents: Purple-900 with opacity for backgrounds
+  - Border colors: Yellow-500/20 and Purple-500/20 for subtle borders
+
+Typography:
+- Headings:
+  - Main title: text-4xl, font-bold, text-yellow-200
+  - Section headings: text-2xl, font-bold, text-yellow-200
+- Body text:
+  - Description: text-xl, text-gray-300
+  - Regular content: Base size, text-white
+
+Layout & Spacing:
+- Page padding: pt-32 pb-20 px-4 (sm:px-6 lg:px-8)
+- Maximum content width: max-w-7xl with mx-auto
+- Section spacing: space-y-12
+- Component padding: p-8 for cards and sections
+
+Background Elements:
+- Grid background:
+  - Fixed position with opacity-10
+  - Grid cells with hover effects
+  - Subtle gradient overlay from yellow-900/20
+
+Components:
+1. Tags/Badges:
+   - Rounded-xl shape
+   - Semi-transparent backgrounds (yellow-900/10, purple-900/10)
+   - Border with 20% opacity
+   - Icon + text combination
+   - Padding: px-4 py-2
+
+2. Cards/Sections:
+   - Gradient backgrounds: from-purple-900/20 to-purple-900/5
+   - Rounded-2xl corners
+   - Border: border-purple-500/20
+   - Inner padding: p-8
+
+3. Back Link:
+   - Yellow-300 with 60% opacity
+   - Hover: full opacity
+   - Left arrow icon
+   - Transition effect on colors
+
+Interactive Elements:
+- Hover effects:
+  - Color transitions
+  - Opacity changes
+  - Gradient intensity adjustments
+- Transitions:
+  - Use transition-colors for color changes
+  - Use transition-opacity for opacity changes
+
+Icons:
+- Size: w-5 h-5 or w-6 h-6
+- Colors: text-yellow-400 or text-purple-400
+- Consistent usage with text alignment
+
+Responsive Design:
+- Container padding adjustments for different breakpoints
+- Fluid typography
+- Maintained spacing hierarchy across screen sizes
+
+Animation Guidelines:
+- Subtle hover transitions
+- Smooth color changes
+- Duration: 300-500ms
+- Timing function: ease or ease-in-out

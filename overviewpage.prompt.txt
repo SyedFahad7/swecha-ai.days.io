@@ -1,0 +1,113 @@
+Workshops Overview Page Style Guide
+
+Color Scheme:
+- Primary background: Black (#000000)
+- Text colors:
+  - Primary: White (#FFFFFF)
+  - Gradient text: Yellow-200 to Yellow-400 for titles
+  - Secondary: Gray-400 (#9CA3AF) for descriptions
+- Accent colors:
+  - Yellow accents: Yellow-500/30 for borders
+  - Purple accents: Purple-500/30 for borders and badges
+  - Gradient backgrounds: from-purple-900/10 via-transparent to-yellow-900/10
+
+Layout Structure:
+- Page container: min-h-screen
+- Content max-width: max-w-7xl
+- Grid layout: 
+  - Mobile: 1 column
+  - Tablet: 2 columns (md:grid-cols-2)
+  - Desktop: 3 columns (lg:grid-cols-3)
+- Grid gap: gap-8
+- Page padding: px-4 sm:px-6 lg:px-8
+- Top padding: pt-32
+- Bottom padding: pb-12
+
+Workshop Cards:
+1. Card Container:
+  - Height: h-[500px]
+  - Border: border-yellow-900/30
+  - Border radius: rounded-lg
+  - Background: Gradient from purple to yellow with transparency
+  - Hover state: Intensified gradient colors
+  - Transition: duration-500
+
+2. Card Content Layout:
+  - Padding: p-8
+  - Flex direction: column
+  - Full height: h-full
+  - Overflow handling: overflow-hidden
+
+3. Card Elements:
+  Category Badges:
+  - Size: text-xs
+  - Text transform: uppercase
+  - Letter spacing: tracking-wider
+  - Border radius: rounded-full
+  - Padding: px-3 py-1
+  - Border style: border-yellow-500/30 or border-purple-500/30
+
+  Title:
+  - Size: text-2xl
+  - Weight: font-bold
+  - Margin bottom: mb-3
+  - Text gradient: from-yellow-200 to-yellow-400
+  - Hover: from-yellow-300 to-yellow-500
+  - Transition: duration-300
+
+  Description:
+  - Color: text-gray-400
+  - Line height: leading-relaxed
+  - Line clamp: line-clamp-3
+
+  Topics:
+  - Display: flex-wrap
+  - Gap: gap-2
+  - Badge style:
+    - Background: bg-purple-900/10
+    - Border: border-purple-500/30
+    - Text: text-purple-300
+    - Size: text-xs
+    - Padding: px-2.5 py-1
+    - Shape: rounded-full
+
+  Details Section:
+  - Border top: border-yellow-900/30
+  - Grid layout: grid-cols-2
+  - Spacing: gap-4
+  - Padding: py-4
+  - Labels: text-yellow-300/60
+  - Values: text-yellow-100
+
+Background Elements:
+- Grid overlay:
+  - Fixed positioning
+  - 200 cells
+  - Border color: #2A2A2A
+  - Hover effect: gradient from yellow-900/20
+  - Opacity: 10%
+
+Interactive Behaviors:
+- Card hover:
+  - Gradient intensity increase
+  - Title color shift
+  - Smooth transitions
+- Grid cell hover:
+  - Gradient opacity transition
+
+Animation & Transitions:
+- Color transitions: transition-colors
+- All transitions: duration-300 to duration-500
+- Smooth easing functions
+
+Responsive Breakpoints:
+- Mobile: Default (1 column)
+- Tablet: md:grid-cols-2
+- Desktop: lg:grid-cols-3
+- Padding adjustments at sm: and lg: breakpoints
+
+Typography Hierarchy:
+- Main heading: Handled by MainHeading component
+- Card titles: text-2xl with gradient
+- Metadata: text-xs for badges and topics
+- Descriptions: Base size with gray-400 color
