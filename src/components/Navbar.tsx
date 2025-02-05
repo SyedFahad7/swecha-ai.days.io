@@ -35,22 +35,22 @@ export default function Navbar({ navItems }: { navItems: { name: string; path: s
                 </Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
-            {/* Desktop Navigation */}
-            <div className="hidden xl:flex items-center space-x-8">
-              {navItems.map(item => (
-                <NavigationMenuItem key={item.name}>
-                  <NavigationMenuLink asChild>
-                    <Link
-                      href={item.path}
-                      className="text-gray-300 hover:text-white transition-colors relative group"
-                    >
-                      {item.name}
-                      <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              ))}
-            </div>
+          </div>
+          {/* Desktop Navigation */}
+          <div className="hidden xl:flex items-center space-x-8">
+            {navItems.map(item => (
+              <NavigationMenuItem key={item.name}>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href={item.path}
+                    className="text-gray-300 hover:text-white transition-colors relative group"
+                  >
+                    {item.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
           </div>
           {/* Mobile Menu */}
           <div className="flex items-center">
