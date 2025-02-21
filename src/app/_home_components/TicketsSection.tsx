@@ -14,6 +14,10 @@ export default function TicketsSection() {
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
           Tickets
         </h2>
+        <p className="text-center text-yellow-100 mb-8">
+          Please note that seat booking for workshops will open soon. You will be able to book your
+          preferred ticket tier accordingly. Also, all certificates will be distributed digitally.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {tickets.map((ticket, index) => (
             <div
@@ -24,12 +28,10 @@ export default function TicketsSection() {
               }}
             >
               <div className="flex flex-col h-full p-8">
-                {/* Title with gradient effect */}
                 <h3 className="text-2xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400 group-hover:from-yellow-300 group-hover:to-yellow-500 transition-all duration-300">
                   {ticket.title}
                 </h3>
 
-                {/* Benefits list with improved styling */}
                 <div className="flex-grow mb-6">
                   <ul className="space-y-3">
                     {ticket.benefits.map((benefit, i) => (
@@ -61,7 +63,6 @@ export default function TicketsSection() {
                   </ul>
                 </div>
 
-                {/* Details section with border */}
                 <div className="grid grid-cols-2 gap-4 py-4 border-t border-yellow-900/30">
                   {isEarlyBird && ticket.type === 'standard' && (
                     <div>
@@ -94,7 +95,6 @@ export default function TicketsSection() {
                   </div>
                 </div>
 
-                {/* Buy button */}
                 <Link
                   href={ticket.purchaseUrl}
                   target="_blank"

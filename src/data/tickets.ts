@@ -35,7 +35,7 @@ export const tickets: Ticket[] = [
       'For beginners interested in Generative AI',
       'Inspiring Keynotes, Panels & Talks',
       'Expert Mentorship',
-      'Beginner level workshops with certification*',
+      'Beginner level workshops with certification',
       'Registration Kit',
       'Q & A sessions & Access to recorded talks',
       'Lunch and refreshments for 2 days',
