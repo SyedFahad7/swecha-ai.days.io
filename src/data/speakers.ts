@@ -181,6 +181,18 @@ export const speakers: Speaker[] = [
       linkedin: 'https://www.linkedin.com/in/kesavareddy/',
     },
   },
+  {
+    id: 'tarun-dua',
+    name: 'Tarun Dua',
+    role: 'Founder, E2E Networks',
+    image: '/speakers/Tarun-Dua.jpeg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/tarundua/',
+    },
+  },
 ];
 
 export const speakerById = speakers.reduce(
