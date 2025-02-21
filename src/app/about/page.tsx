@@ -15,7 +15,7 @@ export default function AboutUs() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/about/conference.jpg"
+              src="/images/about-1.jpeg"
               alt="AI Conference"
               fill
               className="object-cover hover:scale-105 transition-transform duration-300"
@@ -24,9 +24,12 @@ export default function AboutUs() {
           </div>
           <div className="prose max-w-none">
             <p className="text-xl text-gray-300 mb-6">
-              AI Days 2025 is a premier artificial intelligence conference bringing together
-              industry leaders, researchers, and innovators to explore the latest advancements in AI
-              technology.
+              AI Days 2025 is being organized by{' '}
+              <a href="https://viswam.ai" target="_blank" rel="noopener noreferrer">
+                Viswam.AI
+              </a>
+              , a joint initiative by IIIT Hyderabad and Swecha, focusing on building foundational
+              AI technologies for the Global South.
             </p>
             <p className="text-xl text-gray-300">
               AI Days aims to bring together experts and institutions from Industry, Academia,
@@ -40,17 +43,22 @@ export default function AboutUs() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="prose max-w-none">
             <p className="text-xl text-gray-300 mb-6">
-              In addition, this conference will help foster a better ecosystem for AI-based
-              startups. We aim to conduct this as an annual conference.
+              We, Swecha, are the team behind Telugu language computing. We created the first Telugu
+              operating system, free-type font, and glossary in Telugu. The glossary we developed
+              two decades ago is still widely used every day. We have also recently developed
+              Chandamama Kathalu, a storytelling platform where an AI generates moral stories in
+              Telugu. Our activities and efforts are centred around democratising access to Tech!
             </p>
             <p className="text-xl text-gray-300">
-              Join us for an immersive experience featuring keynote speakers, workshops, and
-              networking opportunities that will shape the future of AI.
+              Every year, we conduct multiple workshops, seminars, conferences and more. We reach
+              out to more than 40,000 IT professionals, engineering faculty and engineering students
+              across Telangana. We have a network of IT professionals across the country who
+              contribute to projects that help society.
             </p>
           </div>
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/about/innovation.jpg"
+              src="/images/about-1.jpeg"
               alt="AI Innovation"
               fill
               className="object-cover hover:scale-105 transition-transform duration-300"
@@ -61,7 +69,7 @@ export default function AboutUs() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/about/workshop.jpg"
+              src="/images/about-2.jpeg"
               alt="AI Workshop"
               fill
               className="object-cover hover:scale-105 transition-transform duration-300"
@@ -71,18 +79,6 @@ export default function AboutUs() {
             <p className="text-xl text-gray-300">
               Connect with industry leaders, learn from experts, and be part of the AI revolution.
             </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 gap-4 mt-8">
-          <div className="relative h-[200px] rounded-2xl overflow-hidden">
-            <Image src="/about/networking.jpg" alt="Networking" fill className="object-cover" />
-          </div>
-          <div className="relative h-[200px] rounded-2xl overflow-hidden">
-            <Image src="/about/innovation.jpg" alt="Innovation" fill className="object-cover" />
-          </div>
-          <div className="relative h-[200px] rounded-2xl overflow-hidden">
-            <Image src="/about/technology.jpg" alt="Technology" fill className="object-cover" />
           </div>
         </div>
       </section>
