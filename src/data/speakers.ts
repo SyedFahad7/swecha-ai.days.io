@@ -50,6 +50,18 @@ export const speakers: Speaker[] = [
     },
   },
   {
+    id: 'kiran-chandra',
+    name: 'Kiran Chandra',
+    role: 'Centre Head, VISWAM.AI. Founder, Swecha',
+    image: '/speakers/Renata_Avila.jpeg',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/kiranchandray/',
+    },
+  },
+  {
     id: 'rahul-kulkarni',
     name: 'Rahul Kulkarni',
     role: 'Chief Technologist, Samagra ',
