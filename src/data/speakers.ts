@@ -53,7 +53,7 @@ export const speakers: Speaker[] = [
     id: 'kiran-chandra',
     name: 'Kiran Chandra',
     role: 'Centre Head, VISWAM.AI. Founder, Swecha',
-    image: '/speakers/Renata_Avila.jpeg',
+    image: '/speakers/Kiran-Chandra.jpeg',
     topic: '',
     bio: '',
     social: {
@@ -167,6 +167,18 @@ export const speakers: Speaker[] = [
     social: {
       twitter: '',
       linkedin: 'https://www.linkedin.com/in/amnigos/',
+    },
+  },
+  {
+    id: 'kesava-reddy',
+    name: 'Kesava Reddy',
+    role: 'Chief Revenue Officer, E2E Networks',
+    image: '/speakers/Kesava-E2E.png',
+    topic: '',
+    bio: '',
+    social: {
+      twitter: '',
+      linkedin: 'https://www.linkedin.com/in/kesavareddy/',
     },
   },
 ];
