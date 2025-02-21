@@ -69,7 +69,7 @@ export default function Navbar({ navItems }: { navItems: { name: string; path: s
                 </svg>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="min-w-[400px] px-8 py-8 bg-black/95 rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
+                <div className="px-8 py-8 bg-black/95 rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
                   {navItems.map(item => (
                     <NavigationMenuLink key={item.name} asChild>
                       <Link
