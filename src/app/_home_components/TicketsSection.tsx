@@ -1,4 +1,5 @@
-import { tickets } from '@/data/tickets';
+import { tickets, earlyBirdDate, type StandardTicket, type SponsorTicket } from '@/data/tickets';
+import Link from 'next/link';
 
 export default function TicketsSection() {
   return (
@@ -62,14 +63,37 @@ export default function TicketsSection() {
                   </div>
                   <div>
                     <div className="text-yellow-300/60 text-sm mb-1">Price</div>
-                    <div className="text-yellow-100">₹{ticket.price.toLocaleString()}</div>
+                    <div className="text-yellow-100">
+                      {ticket.type === 'standard' ? (
+                        <>
+                          {new Date() <= earlyBirdDate ? (
+                            <>
+                              <span className="line-through text-yellow-100/50">
+                                ₹{(ticket as StandardTicket).price.toLocaleString()}
+                              </span>
+                              <span className="ml-2">
+                                ₹{(ticket as StandardTicket).priceEarlyBird.toLocaleString()}
+                              </span>
+                            </>
+                          ) : (
+                            <>₹{(ticket as StandardTicket).price.toLocaleString()}</>
+                          )}
+                        </>
+                      ) : (
+                        <>From ₹{(ticket as SponsorTicket).minSponsorAmount.toLocaleString()}</>
+                      )}
+                    </div>
                   </div>
                 </div>
 
                 {/* Buy button */}
-                <button className="w-full mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-900/20 to-purple-900/20 border border-yellow-500/30 text-yellow-200 hover:from-yellow-900/30 hover:to-purple-900/30 transition-all duration-300 font-medium">
+                <Link
+                  href={ticket.purchaseUrl}
+                  target="_blank"
+                  className="w-full text-center mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-900/20 to-purple-900/20 border border-yellow-500/30 text-yellow-200 hover:from-yellow-900/30 hover:to-purple-900/30 transition-all duration-300 font-medium"
+                >
                   Buy Ticket
-                </button>
+                </Link>
               </div>
             </div>
           ))}
