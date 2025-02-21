@@ -30,7 +30,7 @@ export const earlyBirdDate = new Date('2025-03-07T23:59:59+05:30');
 export const tickets: Ticket[] = [
   {
     type: 'standard',
-    title: 'AI Enthusiast Ticket',
+    title: 'AI Enthusiast',
     benefits: [
       'For beginners interested in Generative AI',
       'Inspiring Keynotes, Panels & Talks',
@@ -47,7 +47,7 @@ export const tickets: Ticket[] = [
   },
   {
     type: 'standard',
-    title: 'AI Power User Ticket',
+    title: 'AI Power User',
     benefits: [
       'For AI practitioners seeking advanced content',
       'Includes all benefits of the AI Enthusiast ticket',
@@ -61,7 +61,7 @@ export const tickets: Ticket[] = [
   },
   {
     type: 'standard',
-    title: 'AI Creator Ticket',
+    title: 'AI Creator',
     benefits: [
       'For professionals & innovators actively engaged in AI',
       'Includes all benefits of the AI Power User ticket',
@@ -76,7 +76,7 @@ export const tickets: Ticket[] = [
   },
   {
     type: 'sponsor',
-    title: 'Supporter Ticket',
+    title: 'Supporter',
     benefits: [
       'For Sponsors, industry leaders & AI advocates',
       'Access to all the workshops',
