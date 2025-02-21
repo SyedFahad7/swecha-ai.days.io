@@ -105,6 +105,9 @@ export default async function Home({
               openInterestFromByDefault={displayInterestForm}
             />
           </div>
+          <div className="mt-10">
+            <CountdownTimer />
+          </div>
         </div>
       </div>
 
@@ -175,9 +178,6 @@ export default async function Home({
       )}
       {/* Sponsors Section */}
       <SponsorsSection showSponsorsPage={showSponsorsPage} showBecomeSponsor={showBecomeSponsor} />
-      <div className="relative z-10">
-        <CountdownTimer />
-      </div>
     </main>
   );
 }
