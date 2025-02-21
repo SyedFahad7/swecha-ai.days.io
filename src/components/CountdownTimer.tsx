@@ -62,7 +62,7 @@ const CountdownTimer: React.FC = () => {
 
   return (
     <div className="bg-gradient-to-br from-purple-900/10 to-purple-900/5 p-4 border border-purple-500/10 rounded-lg">
-      <h3 className="text-lg font-semibold text-yellow-200 mb-2">Event kicks off in</h3>
+      <h3 className="text-lg font-semibold text-yellow-200 mb-2">Conference begins in</h3>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
         {validUnits.map(([label, value], index) => (
           <div
