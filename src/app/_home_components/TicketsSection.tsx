@@ -15,8 +15,8 @@ export default function TicketsSection() {
           Tickets
         </h2>
         <p className="text-center text-yellow-100 mb-8">
-          Please note that seat booking for workshops will open soon. You will be able to book your
-          preferred ticket tier accordingly. Also, all certificates will be distributed digitally.
+          Seat booking for workshops will open soon. You will be able to reserve your spot based on
+          your ticket tier. All certificates will be distributed digitally.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {tickets.map((ticket, index) => (
