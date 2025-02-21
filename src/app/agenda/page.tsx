@@ -39,6 +39,41 @@ export default function AgendaPage() {
       </div>
 
       {/* Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">
+        <h1 className="text-5xl md:text-7xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
+          Conference Agenda
+        </h1>
+        <p className="text-2xl text-yellow-100/60 mb-12 text-center max-w-2xl">
+          Our exciting agenda is being finalized. Check back soon for a full schedule of inspiring
+          talks, workshops, and networking opportunities!
+        </p>
+        <div className="animate-pulse flex space-x-4">
+          <div className="rounded-full bg-yellow-500/20 h-3 w-3"></div>
+          <div className="rounded-full bg-yellow-500/20 h-3 w-3"></div>
+          <div className="rounded-full bg-yellow-500/20 h-3 w-3"></div>
+        </div>
+      </div>
+    </main>
+  );
+}
+
+export function AgendaPageActual() {
+  // export it when agenda is ready
+  return (
+    <main className="min-h-screen bg-black text-white">
+      {/* Background Grid */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 grid grid-cols-[repeat(auto-fit,minmax(50px,1fr))] grid-rows-[repeat(auto-fit,minmax(50px,1fr))] opacity-10">
+          {Array.from({ length: 200 }).map((_, i) => (
+            <div
+              key={i}
+              className="border border-[#2A2A2A] relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-yellow-900/20 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition-opacity"
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Content */}
       <div className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="relative max-w-7xl mx-auto mb-24">
