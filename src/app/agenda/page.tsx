@@ -57,8 +57,8 @@ export default function AgendaPage() {
   );
 }
 
-export function AgendaPageActual() {
-  // export it when agenda is ready
+(function AgendaPageActual() {
+  // export as default it when agenda is ready
   return (
     <main className="min-h-screen bg-black text-white">
       {/* Background Grid */}
@@ -186,4 +186,4 @@ export function AgendaPageActual() {
       </div>
     </main>
   );
-}
+})();
