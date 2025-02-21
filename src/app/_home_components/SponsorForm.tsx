@@ -18,20 +18,8 @@ const schema = z.object({
       'Please enter a valid website URL'
     )
     .or(z.literal('')),
-  sponsorshipTypes: z.array(z.string()),
   message: z.string().min(10, 'Mind sharing a bit more in your message?'),
 });
-
-const sponsorOptions = [
-  'Workshops',
-  'Roundtable discussions',
-  'Panels',
-  'Lanyards',
-  'Venue',
-  'Food',
-  'Travel',
-  'Hospitality',
-];
 
 type FormData = z.infer<typeof schema>;
 
@@ -60,9 +48,8 @@ export function SponsorForm() {
           Name: data.contactName,
           'Phone Number': data.phone,
           'Email Address': data.email,
-          'Sponsorship Types': data.sponsorshipTypes.join(', '),
-          Message: data.message,
           Website: data.website,
+          Message: data.message,
         }),
       });
 
@@ -156,27 +143,6 @@ export function SponsorForm() {
           className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
         />
         {errors.website && <p className="text-red-500 text-sm mt-1">{errors.website.message}</p>}
-      </div>
-      <div className="mb-4">
-        <label htmlFor="sponsorshipTypes" className="block text-sm font-medium text-gray-300 mb-2">
-          Sponsorship Types (select all that apply)
-        </label>
-        <div className="grid grid-cols-2 gap-4">
-          {sponsorOptions.map(type => (
-            <label key={type} className="flex items-center space-x-2">
-              <input
-                type="checkbox"
-                value={type}
-                {...register('sponsorshipTypes')}
-                className="form-checkbox h-5 w-5 text-yellow-500 border-gray-600 bg-gray-800 focus:ring-2 focus:ring-yellow-500"
-              />
-              <span className="text-white">{type}</span>
-            </label>
-          ))}
-        </div>
-        {errors.sponsorshipTypes && (
-          <p className="text-red-500 text-sm mt-1">{errors.sponsorshipTypes.message}</p>
-        )}
       </div>
       <div className="mb-4">
         <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
