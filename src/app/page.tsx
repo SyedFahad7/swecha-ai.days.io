@@ -105,6 +105,9 @@ export default async function Home({
               openInterestFromByDefault={displayInterestForm}
             />
           </div>
+          <div className="mt-10">
+            <CountdownTimer />
+          </div>
         </div>
       </div>
 
@@ -123,13 +126,16 @@ export default async function Home({
               className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300 group"
             >
               <span className="relative z-10">View All Speakers</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/50 to-yellow-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </div>
         </div>
       </section>
 
-      {showTicketSection && <TicketsSection />}
+      {showTicketSection && (
+        <div id="tickets">
+          <TicketsSection />
+        </div>
+      )}
 
       {/* Agenda Highlights Section */}
       {showAgenda && (
@@ -172,9 +178,6 @@ export default async function Home({
       )}
       {/* Sponsors Section */}
       <SponsorsSection showSponsorsPage={showSponsorsPage} showBecomeSponsor={showBecomeSponsor} />
-      <div className="relative z-10">
-        <CountdownTimer />
-      </div>
     </main>
   );
 }

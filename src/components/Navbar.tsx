@@ -14,7 +14,7 @@ import {
 
 export default function Navbar({ navItems }: { navItems: { name: string; path: string }[] }) {
   return (
-    <NavigationMenu className="fixed top-0 max-w-full left-0 right-0 z-50 bg-black/[95%] border-b border-purple-900/20">
+    <NavigationMenu className="fixed top-0 max-w-full left-0 right-0 z-50 bg-black/[85%] border-b border-purple-900/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <NavigationMenuList className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -69,7 +69,7 @@ export default function Navbar({ navItems }: { navItems: { name: string; path: s
                 </svg>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
-                <div className="min-w-[400px] px-8 py-8 bg-black/95 rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
+                <div className="px-8 py-8 bg-black/10 rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
                   {navItems.map(item => (
                     <NavigationMenuLink key={item.name} asChild>
                       <Link

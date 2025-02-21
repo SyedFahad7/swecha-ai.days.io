@@ -1,12 +1,23 @@
-import { tickets } from '@/data/tickets';
+import { tickets, earlyBirdDate, type StandardTicket, type SponsorTicket } from '@/data/tickets';
+import Link from 'next/link';
 
 export default function TicketsSection() {
+  const isEarlyBird = new Date() <= earlyBirdDate;
+  const earlyBirdDatePrint = new Date(earlyBirdDate).toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
   return (
     <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400">
           Tickets
         </h2>
+        <p className="text-center text-yellow-100 mb-8">
+          Please note that seat booking for workshops will open soon. You will be able to book your
+          preferred ticket tier accordingly. Also, all certificates will be distributed digitally.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {tickets.map((ticket, index) => (
             <div
@@ -17,12 +28,10 @@ export default function TicketsSection() {
               }}
             >
               <div className="flex flex-col h-full p-8">
-                {/* Title with gradient effect */}
                 <h3 className="text-2xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 to-yellow-400 group-hover:from-yellow-300 group-hover:to-yellow-500 transition-all duration-300">
                   {ticket.title}
                 </h3>
 
-                {/* Benefits list with improved styling */}
                 <div className="flex-grow mb-6">
                   <ul className="space-y-3">
                     {ticket.benefits.map((benefit, i) => (
@@ -54,22 +63,45 @@ export default function TicketsSection() {
                   </ul>
                 </div>
 
-                {/* Details section with border */}
                 <div className="grid grid-cols-2 gap-4 py-4 border-t border-yellow-900/30">
-                  <div>
-                    <div className="text-yellow-300/60 text-sm mb-1">Available Till</div>
-                    <div className="text-yellow-100">{ticket.availableUntil}</div>
-                  </div>
+                  {isEarlyBird && ticket.type === 'standard' && (
+                    <div>
+                      <div className="text-yellow-300/60 text-sm mb-1">Early Bird Till</div>
+                      <div className="text-yellow-100">{earlyBirdDatePrint}</div>
+                    </div>
+                  )}
                   <div>
                     <div className="text-yellow-300/60 text-sm mb-1">Price</div>
-                    <div className="text-yellow-100">₹{ticket.price.toLocaleString()}</div>
+                    <div className="text-yellow-100">
+                      {ticket.type === 'standard' ? (
+                        <>
+                          {new Date() <= earlyBirdDate ? (
+                            <>
+                              <span className="line-through text-yellow-100/50">
+                                ₹{(ticket as StandardTicket).price.toLocaleString()}
+                              </span>
+                              <span className="ml-2">
+                                ₹{(ticket as StandardTicket).priceEarlyBird.toLocaleString()}
+                              </span>
+                            </>
+                          ) : (
+                            <>₹{(ticket as StandardTicket).price.toLocaleString()}</>
+                          )}
+                        </>
+                      ) : (
+                        <>From ₹{(ticket as SponsorTicket).minSponsorAmount.toLocaleString()}</>
+                      )}
+                    </div>
                   </div>
                 </div>
 
-                {/* Buy button */}
-                <button className="w-full mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-900/20 to-purple-900/20 border border-yellow-500/30 text-yellow-200 hover:from-yellow-900/30 hover:to-purple-900/30 transition-all duration-300 font-medium">
+                <Link
+                  href={ticket.purchaseUrl}
+                  target="_blank"
+                  className="w-full text-center mt-6 px-6 py-3 rounded-lg bg-gradient-to-r from-yellow-900/20 to-purple-900/20 border border-yellow-500/30 text-yellow-200 hover:from-yellow-900/30 hover:to-purple-900/30 transition-all duration-300 font-medium"
+                >
                   Buy Ticket
-                </button>
+                </Link>
               </div>
             </div>
           ))}
