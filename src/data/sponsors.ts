@@ -14,7 +14,7 @@ export const sponsorsData: Sponsor[] = [
     description: '',
     logo: '/images/sponsors/meta.svg',
     website: 'https://meta.com',
-    tier: 'platinum',
+    tier: 'silver',
   },
   // {
   //   id: 'codeium',
