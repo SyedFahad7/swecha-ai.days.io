@@ -2,6 +2,12 @@ import { tickets, earlyBirdDate, type StandardTicket, type SponsorTicket } from 
 import Link from 'next/link';
 
 export default function TicketsSection() {
+  const isEarlyBird = new Date() <= earlyBirdDate;
+  const earlyBirdDatePrint = new Date(earlyBirdDate).toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  });
   return (
     <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -57,10 +63,12 @@ export default function TicketsSection() {
 
                 {/* Details section with border */}
                 <div className="grid grid-cols-2 gap-4 py-4 border-t border-yellow-900/30">
-                  <div>
-                    <div className="text-yellow-300/60 text-sm mb-1">Available Till</div>
-                    <div className="text-yellow-100">{ticket.availableUntil}</div>
-                  </div>
+                  {isEarlyBird && ticket.type === 'standard' && (
+                    <div>
+                      <div className="text-yellow-300/60 text-sm mb-1">Early Bird Till</div>
+                      <div className="text-yellow-100">{earlyBirdDatePrint}</div>
+                    </div>
+                  )}
                   <div>
                     <div className="text-yellow-300/60 text-sm mb-1">Price</div>
                     <div className="text-yellow-100">

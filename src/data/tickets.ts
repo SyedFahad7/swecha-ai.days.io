@@ -52,7 +52,7 @@ export const tickets: Ticket[] = [
       'For AI practitioners seeking advanced content',
       'Includes all benefits of the AI Enthusiast ticket',
       'Exclusive networking opportunities',
-      'Intermediate level workshops with certification*',
+      'Intermediate level workshops with certification',
     ],
     availableUntil: '',
     price: 4499,
@@ -65,7 +65,7 @@ export const tickets: Ticket[] = [
     benefits: [
       'For professionals & innovators actively engaged in AI',
       'Includes all benefits of the AI Power User ticket',
-      'Advanced workshops with certification*',
+      'Advanced workshops with certification',
       'Limited seats only',
       'Official AI Days Conference Merchandise (T-Shirt)',
     ],
@@ -79,7 +79,7 @@ export const tickets: Ticket[] = [
     title: 'Supporter Ticket',
     benefits: [
       'For Sponsors, industry leaders & AI advocates',
-      'Access to all the workshops*',
+      'Access to all the workshops',
       'Dedicated networking sessions',
       'Access to Speaker lounge & High-tea',
       'Official AI Days Conference Merchandise (T-Shirt)',
