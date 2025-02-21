@@ -1,8 +1,14 @@
 import Link from 'next/link';
 import EventRegistrationButton from '@/components/EventRegistrationButton';
-import { isAgendaEnabled, isBecomeASponsorEnabled, isSponsorsPageEnabled } from '@/featureFlags';
+import {
+  isAgendaEnabled,
+  isBecomeASponsorEnabled,
+  isSponsorsPageEnabled,
+  isTicketsSectionEnabled,
+} from '@/featureFlags';
 import SponsorsSection from './_home_components/SponsorsSection';
 import SpeakersCarousel from './_home_components/SpeakersCarousel';
+import TicketsSection from './_home_components/TicketsSection';
 import { config } from '@/config';
 import dynamic from 'next/dynamic';
 
@@ -13,12 +19,14 @@ export default async function Home({
 }: {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const [showAgenda, showWorkshops, showSponsorsPage, showBecomeSponsor] = await Promise.all([
-    isAgendaEnabled(),
-    isAgendaEnabled(),
-    isSponsorsPageEnabled(),
-    isBecomeASponsorEnabled(),
-  ]);
+  const [showAgenda, showWorkshops, showSponsorsPage, showBecomeSponsor, showTicketSection] =
+    await Promise.all([
+      isAgendaEnabled(),
+      isAgendaEnabled(),
+      isSponsorsPageEnabled(),
+      isBecomeASponsorEnabled(),
+      isTicketsSectionEnabled(),
+    ]);
 
   const conferenceDates = config.CONFERENCE_DAYS.datesLabel;
   const displayInterestForm = (await searchParams)['display-interest-form'] === '1';
@@ -97,6 +105,9 @@ export default async function Home({
               openInterestFromByDefault={displayInterestForm}
             />
           </div>
+          <div className="mt-10">
+            <CountdownTimer />
+          </div>
         </div>
       </div>
 
@@ -112,17 +123,22 @@ export default async function Home({
           <div className="text-center mt-12 relative z-10">
             <Link
               href="/speakers"
-              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300 relative overflow-hidden group"
+              className="inline-block px-6 py-3 border border-yellow-500 rounded-full text-base md:text-lg font-semibold hover:bg-yellow-500/10 transition-all duration-300 group"
             >
               <span className="relative z-10">View All Speakers</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/50 to-yellow-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </Link>
           </div>
         </div>
       </section>
 
+      {showTicketSection && (
+        <div id="tickets">
+          <TicketsSection />
+        </div>
+      )}
+
       {/* Agenda Highlights Section */}
-      {showAgenda && (
+      {showAgenda && false && (
         <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-purple-900/20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
@@ -142,7 +158,7 @@ export default async function Home({
       )}
 
       {/* Workshops Preview Section */}
-      {showWorkshops && (
+      {showWorkshops && false && (
         <section className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400">
@@ -160,12 +176,8 @@ export default async function Home({
           </div>
         </section>
       )}
-
       {/* Sponsors Section */}
       <SponsorsSection showSponsorsPage={showSponsorsPage} showBecomeSponsor={showBecomeSponsor} />
-      <div className="relative z-10">
-        <CountdownTimer />
-      </div>
     </main>
   );
 }
