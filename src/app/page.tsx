@@ -128,7 +128,11 @@ export default async function Home({
         </div>
       </section>
 
-      {showTicketSection && <TicketsSection />}
+      {showTicketSection && (
+        <div id="tickets">
+          <TicketsSection />
+        </div>
+      )}
 
       {/* Agenda Highlights Section */}
       {showAgenda && (
