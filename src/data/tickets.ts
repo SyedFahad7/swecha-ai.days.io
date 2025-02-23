@@ -70,8 +70,8 @@ export const tickets: Ticket[] = [
       'Official AI Days Conference Merchandise (T-Shirt)',
     ],
     availableUntil: '',
-    price: 5499,
-    priceEarlyBird: 4499,
+    price: 8499,
+    priceEarlyBird: 7499,
     purchaseUrl: 'https://swechafoundation.mojo.page/ai-days-2025-creator',
   },
   {
