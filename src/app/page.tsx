@@ -9,6 +9,7 @@ import {
 import SponsorsSection from './_home_components/SponsorsSection';
 import SpeakersCarousel from './_home_components/SpeakersCarousel';
 import TicketsSection from './_home_components/TicketsSection';
+import Tracks from './_home_components/Tracks';
 import { config } from '@/config';
 import dynamic from 'next/dynamic';
 
@@ -136,6 +137,9 @@ export default async function Home({
           <TicketsSection />
         </div>
       )}
+
+      {/* Tracks Section */}
+      <Tracks />
 
       {/* Agenda Highlights Section */}
       {showAgenda && false && (
