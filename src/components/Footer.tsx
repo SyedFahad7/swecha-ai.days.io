@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 export default function Footer() {
   return (
@@ -14,7 +16,33 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-yellow-200 to-cyan-400 bg-clip-text text-transparent">
               AI Days 2025
             </h3>
-            <p className="text-yellow-100/60">Shaping the future of AI together</p>
+            <p className="text-yellow-100/60 mb-4">Shaping the future of AI together</p>
+            <div className="text-xl flex flex-row gap-2 items-center">
+              <a
+                href="https://www.instagram.com/swechafsmi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram />
+              </a>
+              <a href="https://twitter.com/swechafsmi" target="_blank" rel="noopener noreferrer">
+                <FaXTwitter />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/swechafsmi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn />
+              </a>
+              <a
+                href="https://www.youtube.com/swechafsmi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutube />
+              </a>
+            </div>
           </div>
           {/* <nav className="w-full md:w-1/3 mb-8 md:mb-0">
             <ul className="space-y-2">
