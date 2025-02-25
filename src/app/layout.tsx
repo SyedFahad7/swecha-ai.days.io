@@ -96,8 +96,6 @@ const getNavItems = async () => {
     navItems = [...navItems, { name: 'Agenda', path: '/agenda' }];
   }
 
-  navItems = [...navItems, { name: 'Venue', path: '/venue' }];
-
   if (workshopsEnabled) {
     navItems = [...navItems, { name: 'Workshops', path: '/workshops' }];
   }
@@ -109,6 +107,8 @@ const getNavItems = async () => {
   if (timelineEnabled) {
     navItems = [...navItems, { name: 'Timeline', path: '/timeline' }];
   }
+
+  navItems = [...navItems, { name: 'Venue', path: '/venue' }];
 
   return navItems;
 };
